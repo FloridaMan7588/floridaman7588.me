@@ -4,7 +4,7 @@ FROM alpine:3.18
 # See https://citoyx.com/posts/docker_traefik_hugo_server/
 
 ENV HUGO_VERSION=0.115.4 \
-    HUGO_SITE=/srv/hugo \
+    HUGO_SITE=/src \
     HUGO_BASEURL=https://floridaman7588.me \
     HUGO_ENV=production
 
