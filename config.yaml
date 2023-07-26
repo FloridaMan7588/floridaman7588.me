@@ -109,7 +109,8 @@ params:
         - "(Cosplaying as a )\nSystems Administrator"
         - "Doing a little bit of code and stuff"
         - "Making 'quality' content"
-        - "Maintaing Linux Apps"
+        - "Maintaining Linux Apps"
+        - "Maintaining docker-based projects"
 
   # Experience
   experience:
@@ -252,40 +253,40 @@ params:
         badges:
           - "Flatpak"
           - "Linux"
+          - "Desktop"
         links:
-          - icon: fa fa-envelope
-            url: mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
-          - icon: fab fa-github
-            url: https://github.com/gurusabarish/hugo-profile
-          - icon: fab fa-twitter
-            url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
+          - icon: far fa-file-alt
+            url: https://fm7588.me/waterfox-writeup
+          - icon: fab fa-github-alt
+            url: https://fm7588.me/waterfox-github
 
-      - title: Image Converter
-        content: A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django.
-        image: /images/projects/converter.jpg
+      - title: mochad-ha-addon
+        content: A simple Home Assistant add-on for connecting X-10 ActiveHome devices to your smart home.
+        image: /images/projects/mochad-logo.png
         featured:
-          name: Demo
-          link: https://django-converter.herokuapp.com
+          name: Get it Here!
+          link: https://fm7588.me/ha-addons
         badges:
-          - "Django"
-          - "Bootstrap"
+          - "Home Assistant"
+          - "Linux"
+          - "Docker"
         links:
-          - icon: fab fa-github
-            url: https://github.com/gurusabarish/converter
+          - icon: fab fa-github-alt
+            url: https://fm7588.me/mochad-github
 
-      - title: Hugo Profile V2
-        content: A clean and simple Hugo template for personal portfolio and blog.
-        image: /images/projects/profile2.jpg
-        featured:
-          name: Demo V2
-          link: https://hugo-profile-2.netlify.app
-        badges:
-          - "Hugo"
-          - "Bootstrap"
-          - "Javascript"
-        links:
-          - icon: fab fa-github
-            url: https://github.com/gurusabarish/HugoProfileV2
+#      - title: Hugo Profile V2
+#        content: A clean and simple Hugo template for personal portfolio and blog.
+#        image: /images/projects/profile2.jpg
+#        featured:
+#          name: Demo V2
+#          link: https://hugo-profile-2.netlify.app
+#        badges:
+#          - "Hugo"
+#          - "Bootstrap"
+#          - "Javascript"
+#        links:
+#          - icon: fab fa-github
+#            url: https://github.com/gurusabarish/HugoProfileV2
 
   #Contact
   contact:
