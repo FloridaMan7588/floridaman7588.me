@@ -22,6 +22,8 @@ RUN apk --no-cache add \
 
 WORKDIR ${HUGO_SITE}
 
+COPY . ${HUGO_SITE}
+
 EXPOSE 1313
 
 CMD hugo server \
