@@ -1,6 +1,6 @@
 FROM nginx:latest
 
-RUN apt update && apt install hugo
+RUN apt update && apt install hugo -y
 
 WORKDIR /src
 
