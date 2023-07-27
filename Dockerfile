@@ -1,10 +1,10 @@
-FROM alpine:3.18
+FROM nginx:alpine
 
 # Based off of citoyx/hugo
 # See https://citoyx.com/posts/docker_traefik_hugo_server/
 
 ENV HUGO_VERSION=0.115.4 \
-    HUGO_SITE=/src \
+    SOURCE_DIR=/src \
     HUGO_BASEURL=https://floridaman7588.me \
     HUGO_ENV=production
 
@@ -22,17 +22,10 @@ RUN apk --no-cache add \
 
 WORKDIR ${HUGO_SITE}
 
-COPY . ${HUGO_SITE}
+VOLUME ${HUGO_SITE}
 
-EXPOSE 1313
+COPY run.sh /run.sh
 
-CMD hugo server \
-    --bind 0.0.0.0 \
-    --navigateToChanged \
-    --templateMetrics \
-    --buildDrafts \
-#    --baseURL ${HUGO_BASEURL} \
-    --appendPort=false \
-    --minify \
-    --disableLiveReload\
-    --gc
+EXPOSE 80
+
+CMD ["/run.sh"]
