@@ -31,8 +31,8 @@ CMD hugo server \
     --navigateToChanged \
     --templateMetrics \
     --buildDrafts \
-    --baseURL ${HUGO_BASEURL} \
-    --appendPort=false\
+#    --baseURL ${HUGO_BASEURL} \
+    --appendPort=false \
     --minify \
     --disableLiveReload\
     --gc
