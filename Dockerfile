@@ -6,7 +6,7 @@ WORKDIR /src
 
 VOLUME /src
 
-COPY run.sh /un.sh
+COPY run.sh run.sh
 
 EXPOSE 80
 
