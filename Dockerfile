@@ -2,12 +2,12 @@ FROM nginx:latest
 
 RUN apt update && apt install hugo
 
-WORKDIR ${SOURCE_DIR}
+WORKDIR /src
 
-VOLUME ${SOURCE_DIR}
+VOLUME /src
 
-COPY run.sh /run.sh
+COPY run.sh /un.sh
 
 EXPOSE 80
 
-CMD ["/run.sh"]
+CMD ["run.sh"]
