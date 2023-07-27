@@ -17,12 +17,12 @@ RUN apk --no-cache add \
     && tar -xzf /tmp/hugo.tar.gz -C /tmp \
     && mv /tmp/hugo /usr/local/bin/ \
     && apk del curl \
-    && mkdir -p ${HUGO_SITE} \
+    && mkdir -p ${SOURCE_DIR} \
     && rm -rf /tmp/*
 
-WORKDIR ${HUGO_SITE}
+WORKDIR ${SOURCE_DIR}
 
-VOLUME ${HUGO_SITE}
+VOLUME ${SOURCE_DIR}
 
 COPY run.sh /run.sh
 
