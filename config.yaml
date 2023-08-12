@@ -11,7 +11,7 @@ outputs:
     - "HTML"
     - "RSS"
 
-Paginate: 5
+Paginate: 6
 enableRobotsTXT: true
 disqusShortname: FloridaMan7588
 
