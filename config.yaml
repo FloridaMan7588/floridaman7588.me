@@ -1,27 +1,37 @@
 baseURL: "https://floridaman7588.me"
-languageCode: "en-us"
+languageCode: "en-US"
 title: "FloridaMan's Site"
 theme: profile
 
 outputs:
   home:
     - "HTML"
-    - "RSS"
     - "JSON"
   page:
     - "HTML"
     - "RSS"
 
-Paginate: 3
+Paginate: 5
 enableRobotsTXT: true
 disqusShortname: FloridaMan7588
-# googleAnalytics: G-MEASUREMENT_ID
 
 markup:
   goldmark:
     renderer:
       unsafe: true
 
+Menus:
+  main:
+    - identifier: blog
+      name: Blog
+      title: Blog posts
+      url: /blogs
+      weight: 1
+    - identifier: projects
+      name: Full Projects list
+      title: Full Projects list
+      url: /projects
+      weight: 2
 
 params:
   title: "FloridaMan's Site"
@@ -31,14 +41,14 @@ params:
   animate: true
 
   theme:
-    # disableThemeToggle: true
-    # defaultTheme: "light" # dark
+    disableThemeToggle: false
+    defaultTheme: "dark"
 
   font:
-    fontSize: 1rem # default: 1rem
-    fontWeight: 400 # default: 400
-    lineHeight: 1.5 # default: 1.5
-    textAlign: left # default: left
+    fontSize: 1rem
+    fontWeight: 400
+    lineHeight: 1.5
+    textAlign: left
 
   # color preference
   color:
@@ -179,15 +189,15 @@ params:
 
   # Education
   education:
-    enable: false
-    # title: "Custom Name"
-#    index: false
-#    items:
-#      - title: "Master of Business Administration"
-#        school:
-#          name: "University of California, Berkeley"
-#          url: "https://example.org"
-#        date: "2013 - 2015"
+    enable: true
+    title: "Education"
+    index: false
+    items:
+      - title: "High School Attendant"
+        school:
+          name: "Shawnee Mission Northwest High School"
+          url: "https://smnorthwest.smsd.org"
+        date: "2023 - Present"
 #        GPA: "3.8 out of 5.0"
 #        content: |-
 #          Extracurricular Activities
@@ -242,7 +252,7 @@ params:
   # projects
   projects:
     enable: true
-    # title: "Custom Name"
+    title: "Featured Projects"
     items:
       - title: Waterfox As a Flatpak
         content: Waterfox, a browser built for the modern web, now available as a Flatpak.
@@ -292,9 +302,9 @@ params:
   contact:
     enable: true
     # title: "Custom Name"
-    content: My inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
-    email: gurusabarisha@gmail.com
-    btnName: Mail me
+    content: Wanna talk to me? Hang out? Or just ask me a question? Visit my LittleLink below to find me!
+    link: https://fm7588.me/links
+    btnName: Talk to me!
     # formspree:
     #   enable: true # `contact.email` value will be ignored
     #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
@@ -309,11 +319,10 @@ params:
       enable: true
       disableFeaturedImage: false
     socialNetworks:
-      github: https://github.com
-      linkedin: https://linkedin.com
-      twitter: https://twitter.com
-      instagram: https://instagram.com
-      facebook: https://facebook.com
+      github: https://fm7588.me/github
+      linkedin: https://fm7588.me/LinkedIn
+      mastodon: https://fm7588.me/mastodon
+
 
   # List pages like blogs and posts
   listPages:
