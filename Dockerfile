@@ -4,7 +4,7 @@
 # If you need more help, visit the Dockerfile reference guide at
 # https://docs.docker.com/go/dockerfile-reference/
 
-ARG NODE_VERSION=20.5.0
+ARG NODE_VERSION=20.11.1
 
 ################################################################################
 # Use node image for base image for all stages.
@@ -17,6 +17,9 @@ WORKDIR /usr/src/app
 ################################################################################
 # Create a stage for installing production dependecies.
 FROM base as deps
+
+# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+RUN apk add --no-cache libc6-compat
 
 # Download dependencies as a separate step to take advantage of Docker's caching.
 # Leverage a cache mount to /root/.npm to speed up subsequent builds.
@@ -51,6 +54,11 @@ FROM base as final
 # Use production node environment by default.
 ENV NODE_ENV production
 
+# Ensure caching works correctly for Next.Js
+RUN mkdir -p .next/cache
+RUN chown -R node:node .next
+RUN chmod -R 777 .next/cache
+
 # Run the application as a non-root user.
 USER node
 
@@ -61,6 +69,8 @@ COPY package.json .
 # the built application from the build stage into the image.
 COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY --from=build /usr/src/app/src ./src
+COPY --from=build /usr/src/app/.next ./.next
+COPY --from=build /usr/src/app/next.config.mjs ./next.config.mjs
 
 
 # Expose the port that the application listens on.

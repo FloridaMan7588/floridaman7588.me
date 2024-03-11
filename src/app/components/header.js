@@ -8,7 +8,7 @@ import { useState } from 'react'
 
 const options = {
 	size: 256
-  }
+}
 
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -19,8 +19,8 @@ export default function Header() {
 			<nav className="mx-auto flex max-w-[1880px] max-h-10 items-center justify-between p-6 lg:px-8 bg-mantle rounded-[45px] lg:w-full">
 				<div className="flex justify-start">
 					<div className="flex justify-center place-content-start w-9 h-9 relative">
-						<Gravatar email='me@floridaman7588.me' options={ options }>
-							{url => (<Image src={url} alt='Avatar' className="relative rounded-full max-h-9 max-w-9" sizes='' fill/>)}
+						<Gravatar email='me@floridaman7588.me' options={options}>
+							{url => (<Image src={url} alt='Avatar' className="relative rounded-full max-h-9 max-w-9" sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' fill />)}
 						</Gravatar>
 					</div>
 					<div className="flex items-center">
@@ -52,5 +52,5 @@ export default function Header() {
 				</div>
 			</nav>
 		</header>
-	)
+	);
 }

@@ -13,13 +13,13 @@ export default function Home() {
         <div className='max-w-48 max-h-fit md:justify-center grid grid-cols-1 place-items-center'>
          <div className="md:flex relative min-h-48 min-w-48 py-4 md:min-h-64 md:min-w-64">
 					  <Gravatar email='me@floridaman7588.me' options={ options }>
-						  {url => (<Image src={url} alt='Avatar' className="rounded-[70px]" fill/>)}
+						  {url => (<Image src={url} alt='Avatar' className="rounded-[70px]" sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' fill/>)}
 					  </Gravatar>
 				  </div>
           <div className='flex grid-cols-3 py-8'>
-            <a href='https://fm7588.me/github'><FontAwesomeIcon icon={faGithubSquare} className='px-4 min-w-16 min-h-16'/></a>
-            <a href='https://fm7588.me/LinkedIn'><FontAwesomeIcon icon={faLinkedin} className='px-4 min-w-16 min-h-16'/></a>
-            <a href='https://fm7588.me/mastodon'><FontAwesomeIcon icon={faMastodon} className='px-4 min-w-16 min-h-16'/></a>
+            <a href='https://fm7588.me/github' aria-label='GitHub profile link'><FontAwesomeIcon icon={faGithubSquare} className='px-4 min-w-16 min-h-16'/></a>
+            <a href='https://fm7588.me/LinkedIn' aria-label='LinkedIn profile link'><FontAwesomeIcon icon={faLinkedin} className='px-4 min-w-16 min-h-16'/></a>
+            <a href='https://fm7588.me/mastodon' aria-label='Mastodon profile link'><FontAwesomeIcon icon={faMastodon} className='px-4 min-w-16 min-h-16'/></a>
           </div>
         </div>
         <div className="block md:flex relative text-center min-w-content">
