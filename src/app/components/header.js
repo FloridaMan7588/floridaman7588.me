@@ -24,7 +24,7 @@ export default function Header() {
 						</Gravatar>
 					</div>
 					<div className="flex items-center">
-						<a href="/" className="text-text lg:text-3xl sm:text-1xl font-bold pl-7"><p>FloridaMan&apos;s Site</p></a>
+						<a href="/" className="text-text lg:text-3xl sm:text-1xl font-bold px-4"><p>FloridaMan&apos;s Site</p></a>
 					</div>
 				</div>
 				<div className="lg:hidden flex justify-end items-center">
