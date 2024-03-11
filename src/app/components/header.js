@@ -6,6 +6,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from 'react'
 
+const options = {
+	size: 256
+  }
+
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [onMobile] = useState(false);
@@ -15,8 +19,8 @@ export default function Header() {
 			<nav className="mx-auto flex max-w-[1880px] max-h-10 items-center justify-between p-6 lg:px-8 bg-mantle rounded-[45px] lg:w-full">
 				<div className="flex justify-start">
 					<div className="flex justify-center place-content-start w-9 h-9 relative">
-						<Gravatar email='me@floridaman7588.me'>
-							{url => (<Image src={url} alt='Avatar' className="relative rounded-full max-h-9 max-w-9" fill/>)}
+						<Gravatar email='me@floridaman7588.me' options={ options }>
+							{url => (<Image src={url} alt='Avatar' className="relative rounded-full max-h-9 max-w-9" sizes='' fill/>)}
 						</Gravatar>
 					</div>
 					<div className="flex items-center">
@@ -24,7 +28,7 @@ export default function Header() {
 					</div>
 				</div>
 				<div className="lg:hidden flex justify-end items-center">
-					<button type="button" className={`${!isOpen ? '' : 'hidden'} text-text`} onClick={() => setIsOpen(!isOpen)}>
+					<button type="button" className={`${!isOpen ? '' : 'hidden'} text-text`} onClick={() => setIsOpen(!isOpen)} aria-label='Header Menu'>
 						<FontAwesomeIcon icon={faBars} />
 					</button>
 					<div className={`${isOpen ? '' : 'hidden'} flex feh-64 bg-mantle py-5 relative rounded-[25px] justify-self-end mt-32`}>
