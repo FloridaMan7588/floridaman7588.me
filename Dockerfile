@@ -55,9 +55,10 @@ FROM base as final
 ENV NODE_ENV production
 
 # Ensure caching works correctly for Next.Js
-RUN mkdir -p .next/cache
-RUN chown -R node:node .next
-RUN chmod -R 777 .next/cache
+COPY --from=build /usr/src/app/.next ./.next
+RUN mkdir -p ./.next/cache
+RUN chown -R node:node ./.next
+RUN chmod -R 777 ./.next/cache
 
 # Run the application as a non-root user.
 USER node
@@ -69,7 +70,6 @@ COPY package.json .
 # the built application from the build stage into the image.
 COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY --from=build /usr/src/app/src ./src
-COPY --from=build /usr/src/app/.next ./.next
 COPY --from=build /usr/src/app/next.config.mjs ./next.config.mjs
 
 
