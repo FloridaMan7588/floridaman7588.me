@@ -2,8 +2,8 @@ import { Raleway } from "next/font/google";
 import "./globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import Header from './components/header.js';
-import Footer from './components/footer.js';
+import Header from './components/nav/header.jsx';
+import Footer from './components/nav/footer.jsx';
 
 
 const raleway = Raleway({ subsets: ["latin"], preload: true, variable: "--font-raleway" });

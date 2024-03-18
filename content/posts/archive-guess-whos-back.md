@@ -1,13 +1,13 @@
 ---
 title: "Archive: Guess Who's Back"
-date: 2022-05-26T23:12:00-05:00
+date: 2022-05-26T23:12:00-06:00
 draft: false
 tags:
     - Archive
     - Personal
     - News
     - Website
-author: "FloridaMan/Cayden Haun"
+author: "Cayden Haun"
 comments: true
 ---
 

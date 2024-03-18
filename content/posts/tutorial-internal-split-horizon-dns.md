@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Split Horizon DNS at Home"
-date: 2023-08-24T10:35:00-05:00
+date: 2023-08-24T10:35:00-06:00
 draft: true
 tags:
     - Tutorial
@@ -39,22 +39,24 @@ which adds named (The BIND service) to the default run level. Great, our BIND se
 ### BIND Configuration
 When I started configuring my BIND server, I found all sorts of tutorials on the interwebs for many different configurations. What I ended up landing on is an adapted version based on all of those, so let's start with the basics. The `options` directive tells the bind server a lot of important things, including the port and working directory. So, that will look like this in your `/etc/bind/named.conf`:
 
-<code>options {
-              directory "/var/bind";\
-              listen-on port 53 { any }; // This is the listening port for BIND\
-              forwarders {\
-                  1.1.1.1 port 53; // This forwards to an upstream DNS server, which could be Pi-Hole, this is Cloudflare's DNS\
-              }\
-              forward only;\
-              allow-query { any; }; // Allows anyone to query the DNS server\
-              allow-transfer {\
+```
+options {
+              directory "/var/bind";
+              listen-on port 53 { any }; // This is the listening port for BIND
+              forwarders {
+                  1.1.1.1 port 53; // This forwards to an upstream DNS server, which could be Pi-Hole, this is Cloudflare's DNS
+              }
+              forward only;
+              allow-query { any; }; // Allows anyone to query the DNS server
+              allow-transfer {
                       none; // This is more advanced, maybe I'll write on this in the future ;)
-              }\
-              pid-file "/var/run/named/named.pid"; // Don't mess with this file, it will give you trouble!\
-              recursion yes; // This is important if you want to use an upstream DNS server\
-              dnssec-validation yes;\
-              auth-nxdomain no;\
-}</code>
+              }
+              pid-file "/var/run/named/named.pid"; // Don't mess with this file, it will give you trouble!
+              recursion yes; // This is important if you want to use an upstream DNS server
+              dnssec-validation yes;
+              auth-nxdomain no;
+}
+```
 
 If you want to remove the comments, feel free to do so, and remove them especially if they cause errors. This config will set you up with a basic DNS server that forwards all queries to the upstream DNS, which I set as Cloudflare here. Our next configuration is going to be done out of this file, and this is where the split horizon aspect comes in. We're going to create a file in `/etc/bind` with the name of your external domain formatted like this:
 
@@ -62,32 +64,28 @@ If you want to remove the comments, feel free to do so, and remove them especial
 
 So in my case, it will be in the file `/etc/bind/floridaman7588-me.zone` and inside that file we will add a few things.
 
-<code>$TTL 2d // This is the DNS time to live, you might set this lower for testing and quick propagation
-
+```
+$TTL 2d // This is the DNS time to live, you might set this lower for testing and quick propagation
 $ORIGIN floridaman7588.me.
-
-@               IN      SOA     ns.floridaman7588.me. admin.floridaman7588.me. (\
-                                2023082400       ; serial // The serial number of your domain, must be updated with every change. I would recommend following the format yyyymmddNN with N being the iteration number for the day\
-                                12h              ; refresh\
-                                15m              ; retry\
-                                3w               ; expire\
-                                2h               ; minimum ttl\
+@               IN      SOA     ns.floridaman7588.me. admin.floridaman7588.me. (
+                                2023082400       ; serial // The serial number of your domain, must be updated with every change.
+                                                          // I would recommend following the format yyyymmddNN with N being the iteration number for the day
+                                12h              ; refresh
+                                15m              ; retry
+                                3w               ; expire
+                                2h               ; minimum ttl
                                 )
-
-                IN      NS      ns.floridaman7588.me. // This is just the record for the NS domain we configured above\
-ns              IN      A       (Your Servers IP) // and the A record for the NS domain, remember to put your IP here\
-
-// And from here we can create any DNS records we want internally\
-// Do note that by having this domain as a record, BIND will not look at it's upstream\
-// resolvers for it, so you need everything you have exposed publicly in this config as well.\
+                IN      NS      ns.floridaman7588.me. // This is just the record for the NS domain we configured above
+ns              IN      A       (Your Servers IP) // and the A record for the NS domain, remember to put your IP here
+// And from here we can create any DNS records we want internally
+// Do note that by having this domain as a record, BIND will not look at it's upstream
+// resolvers for it, so you need everything you have exposed publicly in this config as well.
 // For example, we need the root domain itself
-
 @               IN      A       (Your internal web servers IP) // The @ sign will tell BIND that this is for the root domain, and remember to put your IP in!
-
-// And finally, add an internal service you want to be accessed only by devices\
-// that are using your DNS server\
+// And finally, add an internal service you want to be accessed only by devices
+// that are using your DNS server
 internal        IN      A       (Your internal services IP)
-</code>
+```
 
 Just remember to replace my domain with your own, and the IP addresses with your internal ones, and that's it!
 <br>
@@ -95,16 +93,18 @@ Just remember to replace my domain with your own, and the IP addresses with your
 <br>
 Or is it?
 <br>
+<br>
 Turns out we still have to add the zone configuration to the BIND configuration file. So, we'll save and exit out of the zone file and return to our `named.conf` file. At the bottom, we need to point BIND at the new configuration file. This is done with a simple
 
-<code>zone "example.com" IN {\
+```
+zone "example.com" IN {\
         type master;\
         file "/etc/bind/example-com.zone";\
 }
-</code>
+```
 
 at the bottom of the file, and now we're done for realsies. Just restart bind with
 
-`rc-service named restart`
+```rc-service named restart```
 
 and hopefully, you'll have a brand new DNS server serving your domains with split horizon DNS on the inside and outside of your network.  Thanks for reading this tutorial, and have a great day!

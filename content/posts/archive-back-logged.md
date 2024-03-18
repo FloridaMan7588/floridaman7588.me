@@ -1,11 +1,11 @@
 ---
-title: "Archive: Backlogged"
-date: 2021-11-28T22:30:00-05:00
+title: "Archive: Back-logged"
+date: 2021-11-28T22:30:00-06:00
 draft: false
 tags:
     - Archive
     - Personal
-author: "FloridaMan/Cayden Haun"
+author: "Cayden Haun"
 comments: true
 ---
 

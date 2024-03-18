@@ -1,12 +1,12 @@
 ---
 title: "Archive: New Website"
-date: 2021-06-28T00:00:00-05:00
+date: 2021-06-28T00:00:00-06:00
 draft: false
 tags:
     - Archive
     - News
     - Website
-author: "FloridaMan/Cayden Haun"
+author: "Cayden Haun"
 comments: true
 ---
 

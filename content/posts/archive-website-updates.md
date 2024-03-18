@@ -1,12 +1,12 @@
 ---
 title: "Archive: Website Updates"
-date: 2021-07-22T02:24:00-05:00
+date: 2021-07-22T02:24:00-06:00
 draft: false
 tags:
     - Archive
     - News
     - Website
-author: "FloridaMan/Cayden Haun"
+author: "Cayden Haun"
 comments: true
 ---
 

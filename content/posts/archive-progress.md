@@ -1,12 +1,12 @@
 ---
 title:  "Archive: Progress"
-date:   2021-09-07T18:30:00-05:00
+date:   2021-09-07T18:30:00-06:00
 draft: false
 tags:
     - Archive
     - News
     - Website
-author: "FloridaMan/Cayden Haun"
+author: "Cayden Haun"
 comments: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "A Brand New Site!"
-date: 2023-08-12T12:35:00-05:00
+date: 2023-08-12T12:35:00-06:00
 draft: false
 tags:
     - Personal
