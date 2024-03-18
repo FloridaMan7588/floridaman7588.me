@@ -22,7 +22,7 @@ export default async function Post(req) {
 		<main className="bg-base min-h-screen max-w-screen">
 			<BaseCard>
 			<h1 className='text-text text-center text-3xl font-bold py-4 px-2'>{postContent.title}</h1>
-			<div dangerouslySetInnerHTML={ postContent.renderedHtml } className='text-text'/>
+			<div dangerouslySetInnerHTML={ postContent.renderedHtml } className='text-text' id='postContent'/ >
 
 			</BaseCard>
 		</main>
