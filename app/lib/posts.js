@@ -3,7 +3,10 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import { format } from 'date-fns';
 
+import PostCard from '@/app/components/cards/postcard.jsx';
+import { generateRssFeed } from '@/app/lib/rss.js';
 
 /* A lot of this comes from the Next.JS tutorial, and has been adapted to work with App Routing in Next14.
 See https://nextjs.org/learn/basics/data-fetching for more info*/
@@ -64,4 +67,27 @@ export async function getPostData(slug) {
     renderedHtml,
     ...matterResult.data,
   };
+}
+
+export async function getPosts() {
+
+  const postData = await getSortedPostsData()
+  await generateRssFeed()
+
+  const postList = []
+	for (const post of postData) {
+		const date = format(post.date, 'do LLL. yyyy h:mm a');
+		postList.push(
+			<div key={post.slug} className='py-4 px-2'>
+				<PostCard
+					title={post.title}
+					date={date.toString()}
+					author={post.author}
+					description={post.description}
+					slug={post.slug}
+				/>
+			</div>
+		)
+	}
+  return postList;
 }

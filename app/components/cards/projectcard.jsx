@@ -3,18 +3,20 @@ import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGitAlt } from '@fortawesome/free-brands-svg-icons';
 
-export default function ProjectCard({ title, description, image, downloadUrl, sourceUrl }) {
+export default function ProjectCard({ title, description, image, imageLink, downloadUrl, sourceUrl }) {
 	return (
-		<div className='py-4 md:px-16'>
+		<div className='py-4 px-2 md:px-16'>
 			<div className='bg-crust rounded-[45px] px-4 py-4 text-text grid-cols-1 grid place-items-center'>
 				<div className='px-4 py-4'>
 					<h2 className='text-left text-3xl font-bold py-4'>{title}</h2>
 					<p className='text-xl py-4'>{description}</p>
 				</div>
-				<div>
-					<Image src={image} alt={title} className='rounded-[45px] px-8 py-8' width={384} height={384} priority={false} />
+				<div className='px-2 py-2'>
+					<Link href={imageLink}>
+						<Image src={image} alt={title} className='rounded-[45px] px-8 py-8 transition-transform duration-300 transform hover:scale-110' width={384} height={384} priority={false} />
+					</Link>
 				</div>
-				<div className='min-w-full'>
+				<div className='min-w-full px-2 py-2'>
 					<hr></hr>
 					<div className='grid grid-cols-2'>
 						<div className='px-4 place-self-start'>

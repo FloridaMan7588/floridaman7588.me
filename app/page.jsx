@@ -1,17 +1,18 @@
 import Link from 'next/link'
-
-import BaseCard from '@/app/components/cards/basecard.jsx';
-
 import Avatar from '@/app/components/avatar.jsx';
 import Socials from '@/app/components/socials.jsx';
+import waterfoxLogo from '@/public/images/projects/waterfox-logo.png';
+import mochadLogo from '@/public/images/projects/mochad-logo.png';
 
+import BaseCard from '@/app/components/cards/basecard.jsx';
 import AboutCard from '@/app/components/cards/aboutcard.jsx';
 import ProjectCard from '@/app/components/cards/projectcard.jsx';
 
-import waterfoxLogo from '@/public/waterfox-logo.png';
-import mochadLogo from '@/public/mochad-logo.png';
+import { getPosts } from '@/app/lib/posts.js';
 
-export default function Home() {
+export default async function Home() {
+  const postList = (await getPosts()).slice(0, 4)
+
   return (
     <main className="bg-base min-h-screen max-w-screen">
       <div className="px-16 py-8 grid grid-cols-1 md:grid-cols-2 place-items-center md:justify-center">
@@ -36,7 +37,7 @@ export default function Home() {
       </BaseCard>
       <BaseCard id='education'>
         <h1 className='text-text text-center text-4xl font-bold px-7 py-4'>Education</h1>
-        <ul className='px-8 py-4 text-text'>
+        <ul className='px-2 py-4 text-text'>
           <li className='bg-crust rounded-[32px]'>
             <div className='px-2 py-2'>
               <div className='py-2 grid place-items-center md:flex md:justify-between'>
@@ -56,11 +57,13 @@ export default function Home() {
           <ProjectCard title='Waterfox Flatpak'
             description='Waterfox, a browser built for the modern web, now available as a Flatpak.'
             image={waterfoxLogo}
+            imageLink='https://fm7588.me/waterfox-flatpak'
             downloadUrl='https://fm7588.me/waterfox-flathub'
             sourceUrl='https://fm7588.me/waterfox-github' />
           <ProjectCard title='mochad-ha-addon'
             description='A simple Home Assistant add-on for connecting X-10 ActiveHome devices to your smart home.'
             image={mochadLogo}
+            imageLink='https://fm7588.me/mochad-ha-addon'
             downloadUrl='https://fm7588.me/mochad-releases'
             sourceUrl='https://fm7588.me/mochad-github' />
         </div>
@@ -72,6 +75,12 @@ export default function Home() {
               <Link href='/projects' aria-label='Navigate to full projects page'><p className='font-bold text-xl px-4 py-4'>View List Here</p></Link>
             </div>
           </div>
+        </div>
+      </BaseCard>
+      <BaseCard>
+        <div>
+          <h1 className='text-text text-center text-4xl font-bold px-7 py-4'>Recent Blog Posts</h1>
+          <div className='grid md:grid-cols-4 justify-center'>{postList}</div>
         </div>
       </BaseCard>
     </main>
