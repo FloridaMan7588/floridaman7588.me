@@ -1,9 +1,8 @@
 import { Raleway } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import Header from './components/nav/header.jsx';
-import Footer from './components/nav/footer.jsx';
+import ToTop from '@/app/components/nav/toTop.jsx';
 
 
 const raleway = Raleway({ subsets: ["latin"], preload: true, variable: "--font-raleway" });
@@ -19,11 +18,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${raleway.variable} font-sans bg-base`}>
-        <Header />
+    <html lang="en" className='scroll-smooth scrollbar-none'>
+      <body className={`${raleway.variable} font-sans`}>
         {children}
-        <Footer />
+        <ToTop />
       </body>
     </html>
   );

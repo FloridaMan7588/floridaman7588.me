@@ -18,7 +18,7 @@ export default async function Home() {
       <div className="px-16 py-8 grid grid-cols-1 md:grid-cols-2 place-items-center md:justify-center">
         <div className='max-w-48 max-h-fit md:justify-center grid grid-cols-1 place-items-center'>
           <div className="md:flex relative min-h-48 min-w-48 py-4 md:min-h-64 md:min-w-64">
-            <Avatar className='rounded-[45px] relative' />
+            <Avatar className='rounded-[70px] relative hoverPop110' />
           </div>
           <Socials type='hero' />
         </div>

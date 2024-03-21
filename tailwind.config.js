@@ -19,6 +19,7 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/typography"),
+    require("tailwindcss-no-scrollbar"),
     require("@catppuccin/tailwindcss")({
       defaultFlavour: "mocha",
     }),

@@ -31,3 +31,11 @@ body {
     text-wrap: balance;
   }
 }
+
+.hoverPop105 {
+  @apply transition-transform duration-300 transform hover:scale-105
+}
+
+.hoverPop110 {
+  @apply transition-transform duration-300 transform hover:scale-110
+}

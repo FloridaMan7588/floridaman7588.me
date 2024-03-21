@@ -14,7 +14,7 @@ export async function generateRssFeed() {
 		feed_url: `${appConfig.appUrl}/feed.xml`,
 		image_url: `${appConfig.appUrl}/avatar.png`,
 		pubDate: new Date(),
-		copyright: `Blog posts © 2021-2024 by FloridaMan7588 are licensed under CC BY-SA 4.0 | Site content © 2021-2024 by FloridaMan7588`,
+		copyright: `All Content © 2021-2024 by FloridaMan7588 are licensed under CC BY-SA 4.0`,
 	};
 	const feed = new RSS(feedOptions);
 
@@ -27,5 +27,5 @@ export async function generateRssFeed() {
 		});
 	})
 	
-	fs.writeFileSync('./public/feed.xml', feed.xml({ indent: true }));
+	fs.writeFileSync(process.cwd() + '/public/feed.xml', feed.xml({ indent: true }));
 }
