@@ -14,7 +14,7 @@ export default async function Home() {
   const postList = (await getPosts()).slice(0, 4)
 
   return (
-    <main className="bg-base min-h-screen max-w-screen">
+    <main className="bg-ctp-base min-h-screen max-w-screen">
       <div className="px-16 py-8 grid grid-cols-1 md:grid-cols-2 place-items-center md:justify-center">
         <div className='max-w-48 max-h-fit md:justify-center grid grid-cols-1 place-items-center'>
           <div className="md:flex relative min-h-48 min-w-48 py-4 md:min-h-64 md:min-w-64">
@@ -23,7 +23,7 @@ export default async function Home() {
           <Socials type='hero' />
         </div>
         <div className="block md:flex relative text-center min-w-content">
-          <p className="text-text font-light md:text-4xl text-xl text-center max-w-[694px] min-w-fit">Hello! I&lsquo;m FloridaMan7588, your average enby kittycoded programmer on the interwebs. I like to make things sometimes but I&lsquo;m not very good at it lol.</p>
+          <p className="text-ctp-text font-light md:text-4xl text-xl text-center max-w-[694px] min-w-fit">Hello! I&lsquo;m FloridaMan7588, your average enby kittycoded programmer on the interwebs. I like to make things sometimes but I&lsquo;m not very good at it lol.</p>
         </div>
       </div>
       <BaseCard id='about'>
@@ -36,9 +36,9 @@ export default async function Home() {
           skills={['Fronted Design', 'Backend Code', 'Maintaining Linux Apps', 'Homelab/Sysadmin', 'Content Production']} />
       </BaseCard>
       <BaseCard id='education'>
-        <h1 className='text-text text-center text-4xl font-bold px-7 py-4'>Education</h1>
-        <ul className='px-2 py-4 text-text'>
-          <li className='bg-crust rounded-[32px]'>
+        <h1 className='text-ctp-text text-center text-4xl font-bold px-7 py-4'>Education</h1>
+        <ul className='px-2 py-4 text-ctp-text'>
+          <li className='bg-ctp-crust rounded-[32px]'>
             <div className='px-2 py-2'>
               <div className='py-2 grid place-items-center md:flex md:justify-between'>
                 <h1 className='px-4 text-xl font-bold'>Attending High School</h1>
@@ -52,7 +52,7 @@ export default async function Home() {
         </ul>
       </BaseCard>
       <BaseCard id='projects'>
-        <h1 className='text-text text-center text-4xl font-bold px-7 py-4'>Featured Projects</h1>
+        <h1 className='text-ctp-text text-center text-4xl font-bold px-7 py-4'>Featured Projects</h1>
         <div className='grid grid-cols-1 md:grid-cols-2 py-4 px-4 md:justify-center'>
           <ProjectCard title='Waterfox Flatpak'
             description='Waterfox, a browser built for the modern web, now available as a Flatpak.'
@@ -68,7 +68,7 @@ export default async function Home() {
             sourceUrl='https://fm7588.me/mochad-github' />
         </div>
         <div className='py-4 md:px-16 px-4'>
-          <div className='text-text bg-crust rounded-[45px] px-4 py-4'>
+          <div className='text-ctp-text bg-ctp-crust rounded-[45px] px-4 py-4'>
             <h2 className='text-left text-2xl font-bold py-4 px-4'>View Full Project List</h2>
             <div className='md:flex justify-between'>
               <p className='text-xl px-4 py-4 md:text-justify'>My other and less maintained projects can be found here.</p>
@@ -79,7 +79,7 @@ export default async function Home() {
       </BaseCard>
       <BaseCard>
         <div>
-          <h1 className='text-text text-center text-4xl font-bold px-7 py-4'>Recent Blog Posts</h1>
+          <h1 className='text-ctp-text text-center text-4xl font-bold px-7 py-4'>Recent Blog Posts</h1>
           <div className='grid md:grid-cols-4 justify-center'>{postList}</div>
         </div>
       </BaseCard>

@@ -2,7 +2,7 @@ import Socials from '@/app/components/socials.jsx';
 
 export default function Footer() {
 	return (
-		<footer className="bg-mantle text-text">
+		<footer className="bg-ctp-mantle text-ctp-text">
 			<div className='flex text-center flex-col md:flex-row md:justify-between'>
 				<div className='px-4 md:py-4 py-2'>
 					<div className='md:py-4'>

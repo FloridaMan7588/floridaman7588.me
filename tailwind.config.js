@@ -21,6 +21,7 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("tailwindcss-no-scrollbar"),
     require("@catppuccin/tailwindcss")({
+      prefix: "ctp",
       defaultFlavour: "mocha",
     }),
     ],};

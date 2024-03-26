@@ -6,7 +6,7 @@ import { faGitAlt } from '@fortawesome/free-brands-svg-icons';
 export default function ProjectCard({ title, description, image, imageLink, downloadUrl, sourceUrl }) {
 	return (
 		<div className='py-4 px-2 md:px-16'>
-			<div className='bg-crust rounded-[45px] px-4 py-4 text-text grid-cols-1 grid place-items-center'>
+			<div className='bg-ctp-crust rounded-[45px] px-4 py-4 text-ctp-text grid-cols-1 grid place-items-center'>
 				<div className='px-4 py-4'>
 					<h2 className='text-left text-3xl font-bold py-4'>{title}</h2>
 					<p className='text-xl py-4'>{description}</p>

@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className='scroll-smooth scrollbar-none'>
-      <body className={`${raleway.variable} font-sans bg-base`}>
+      <body className={`${raleway.variable} font-sans bg-ctp-base`}>
         <Header />
         {children}
         <ToTop />

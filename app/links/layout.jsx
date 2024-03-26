@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className='scroll-smooth scrollbar-none'>
       <body className={`${raleway.variable} font-sans`}>
+      <code hidden=""><a rel="me" href="https://blahaj.zone/@floridaman"></a></code>
         {children}
         <ToTop />
       </body>

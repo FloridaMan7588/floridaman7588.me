@@ -16,12 +16,15 @@
 	}
 	
 	code {
-		@apply bg-crust text-text px-2 py-1 text-wrap
+		@apply bg-ctp-crust text-ctp-text px-2 py-1 text-wrap
 	}
 	a {
-		@apply text-lavender
+		@apply text-ctp-lavender
 	}
 	blockquote {
-		@apply text-subtext0 px-16
+		@apply text-ctp-subtext0 px-16
+	}
+	li {
+		@apply list-disc list-inside px-2 py-1
 	}
 }

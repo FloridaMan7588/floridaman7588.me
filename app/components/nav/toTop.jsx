@@ -34,7 +34,7 @@ export default function ToTop() {
             {
                 (show) ? (
                     <div className="fixed bottom-0 right-0 mb-4 mr-4 z-10">
-                    <button onClick={jumpToTop} className="bg-crust text-text rounded-full p-2 hoverPop110 transition">
+                    <button onClick={jumpToTop} className="bg-ctp-crust text-ctp-text rounded-full p-2 hoverPop110 transition">
                         <FontAwesomeIcon icon={faArrowUp} className="h-6 w-6"/>
                     </button>
                 </div>

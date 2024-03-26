@@ -20,10 +20,10 @@ export async function getPostContent(params) {
 export default async function Post(req) {
 	const postContent = await getPostContent(req.params)
 	return (
-		<main className="bg-base min-h-screen max-w-screen">
+		<main className="bg-ctp-base min-h-screen max-w-screen">
 			<BaseCard>
-				<h1 className='text-text text-center text-3xl font-bold py-4 px-2'>{postContent.title}</h1>
-				<div dangerouslySetInnerHTML={postContent.renderedHtml} className='text-text' id='postContent' />
+				<h1 className='text-ctp-text text-center text-3xl font-bold py-4 px-2'>{postContent.title}</h1>
+				<div dangerouslySetInnerHTML={postContent.renderedHtml} className='text-ctp-text' id='postContent' />
 				<CommentCard/>
 			</BaseCard>
 		</main>
