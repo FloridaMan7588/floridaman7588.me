@@ -22,6 +22,7 @@ import background from "@/public/images/links/background.png";
 import Avatar from "@/app/components/avatar.jsx";
 import LinkCard from "@/app/components/cards/linkcard";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -46,84 +47,106 @@ export default function Page() {
           <LinkCard
             icon="fa-solid fa-globe"
             name="Website"
-            color="blue-700"
             link="https://fm7588.me/website"
             description="Link to Personal portfolio/website"
-            className="px-4 py-4"
+            className="bg-blue-700"
           />
           <LinkCard
             icon="fa-brands fa-github"
             name="GitHub"
-            color="black"
             link="https://fm7588.me/github"
             description="Link to Personal GitHub Page"
-            className="px-4 py-4"
+            className="bg-black"
           />
           <LinkCard
             icon="fa-brands fa-linkedin"
             name="LinkedIn"
-            color="indigo-700"
             link="https://fm7588.me/linkedin"
             description="Link to Personal LinkedIn page"
-            className="px-4 py-4"
+            className="bg-indigo-700"
           />
           <LinkCard
             icon="fa-brands fa-mastodon"
             name="Mastodon"
-            color="violet-900"
             link="https://fm7588.me/mastodon"
             description="Link to Personal Microblog/ Mastodon page"
-            className="px-4 py-4"
+            className="bg-violet-900"
           />
           <LinkCard
             icon="fa-brands fa-youtube"
             name="YouTube"
-            color="red-600"
             link="https://fm7588.me/youtube1"
             description="Link to Programming YouTube Channel"
-            className="px-4 py-4"
+            className="bg-red-600"
           />
           <LinkCard
             icon="fa-brands fa-discord"
             name="Discord Server"
-            color="indigo-600"
             link="https://fm7588.me/discord"
             description="Link to Project discord server"
-            className="px-4 py-4"
+            className="bg-indigo-600"
           />
           <LinkCard
             icon="fa-solid fa-dollar-sign"
             name="Ko-Fi"
-            color="sky-400"
             link="https://fm7588.me/kofi"
             description="Link to Ko-Fi page"
-            className="px-4 py-4"
+            className="bg-sky-600"
           />
           <LinkCard
             icon="fa-solid fa-dollar-sign"
             name="Buy Me a Coffee"
-            color="amber-400"
             link="https://fm7588.me/coffee"
             description="Link to Buy me A Coffee"
-            className="px-4 py-4"
+            className="bg-amber-400"
           />
-          <p className="py-4 px-4 text-lg">Projects!</p>
+          <p className="py-6 px-4 text-lg">Projects!</p>
           <LinkCard
             icon="fa-brands fa-github"
             name="Waterfox Flatpak GitHub"
-            color="black"
             link="https://fm7588.me/waterfox-github"
             description="Link to Waterfox Flatpak GitHub"
-            className="px-4 py-4"
+            className="bg-black"
           />
           <LinkCard
             icon="fa-brands fa-github"
             name="Mochad Addon GitHub"
-            color="black"
             link="https://fm7588.me/mochad-github"
             description="Link to Mochad Addon GitHub"
-            className="px-4 py-4"
+            className="bg-black"
           />
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <Link  href='https://lololol.tk'><p className='text-sky-500 underline'>Brrrr, it&apos;s cold down here</p></Link>
         </div>
       </div>
     </div>
