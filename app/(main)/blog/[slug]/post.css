@@ -1,0 +1,30 @@
+#postContent {
+	p {
+		@apply text-lg font-normal px-4 py-4
+	}
+	h3 {
+		@apply text-xl font-bold px-4 py-4
+	}
+	h2 {
+		@apply text-2xl font-bold px-4 py-4
+	}
+	h1 {
+		@apply text-3xl font-bold px-4 py-4
+	}
+	img {
+		@apply rounded-md
+	}
+	
+	code {
+		@apply bg-ctp-crust text-ctp-text px-2 py-1 text-wrap
+	}
+	a {
+		@apply text-ctp-lavender
+	}
+	blockquote {
+		@apply text-ctp-subtext0 px-16
+	}
+	li {
+		@apply list-disc list-inside px-2 py-1
+	}
+}
