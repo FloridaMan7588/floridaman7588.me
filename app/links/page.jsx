@@ -100,7 +100,7 @@ export default function Page() {
             description="Link to Buy me A Coffee"
             className="bg-amber-400"
           />
-          <p className="py-6 px-4 text-lg">Projects!</p>
+          <p className="py-6 px-4 font-bold text-xl">Projects</p>
           <LinkCard
             icon="fa-brands fa-github"
             name="Waterfox Flatpak GitHub"

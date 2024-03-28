@@ -3,7 +3,7 @@ import ContactCard from '@/app/components/cards/contactcard.jsx';
 
 export default async function Blog() {
 	return (
-		<main className="bg-base min-h-screen max-w-screen">
+		<main className="bg-ctp-base min-h-screen max-w-screen">
 			<BaseCard>
 				<ContactCard
 				title='Contact Me'
