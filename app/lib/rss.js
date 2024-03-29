@@ -14,7 +14,7 @@ export async function generateRssFeed() {
 		feed_url: `${appConfig.appUrl}/feed.xml`,
 		image_url: `${appConfig.appUrl}/avatar.png`,
 		pubDate: new Date(),
-		copyright: `All Content © 2021-2024 by FloridaMan7588 are licensed under CC BY-SA 4.0`,
+		copyright: `All Content © 2021-2024 by FloridaMan7588 is licensed under CC BY-SA 4.0`,
 	};
 	const feed = new RSS(feedOptions);
 
