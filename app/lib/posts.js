@@ -1,9 +1,20 @@
 import fs from 'fs';
 import path from 'path';
+
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
 import { format } from 'date-fns';
+import { createRestAPIClient } from "masto";
+
+//unified JS stuff for markdown parsing
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkHtml from 'remark-html';
+import remarkGemoji from 'remark-gemoji';
+import remarkRehype from 'remark-rehype';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeStringify from 'rehype-stringify';
+import {all} from 'lowlight';
+
 
 import PostCard from '@/app/components/cards/postcard.jsx';
 import { generateRssFeed } from '@/app/lib/rss.js';
@@ -24,7 +35,7 @@ export function getSortedPostsData() {
       slug,
       ...matterResult.data,
     };
-  }); 
+  });
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
       return 1;
@@ -56,9 +67,17 @@ export async function getPostData(slug) {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
 
-  const processedContent = await remark()
-    .use(html, { sanitize: false })
+  //Parse Markdown, do fancy stuff, code highlighting, etc
+  const processedContent = await unified()
+    .use(remarkParse)
+    .use(remarkGemoji)
+    .use(remarkHtml, { sanitize: false })
+    .use(remarkRehype)
+    .use (rehypeHighlight, {languages: {...all}})
+    .use(rehypeStringify)
     .process(matterResult.content);
+
+    const date = format(matterResult.data.date, 'do LLL. yyyy h:mm a');
 
   const renderedHtml = { __html: processedContent.toString()}
   // Combine the data with the id
@@ -66,6 +85,7 @@ export async function getPostData(slug) {
     slug,
     renderedHtml,
     ...matterResult.data,
+    date,
   };
 }
 
@@ -90,4 +110,9 @@ export async function getPosts() {
 		)
 	}
   return postList;
+}
+
+export async function getMastodonPosts() {
+  // This is a placeholder for now, but will be used to fetch Mastodon posts in the future.
+  return <div></div>
 }

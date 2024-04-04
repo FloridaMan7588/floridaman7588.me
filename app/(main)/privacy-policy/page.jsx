@@ -150,8 +150,9 @@ export default function PrivacyPolicy() {
 					<ol className='py-2 px-4 md:px-16 list-decimal'>
 						<li id='#personal-info'>
 							<h3 className='text-2xl font-semibold' id='personal-info'>WHAT INFORMATION DO WE COLLECT?</h3>
-							<p className='px-4 py-4 md:px-16 text-left'>
 								<h4 className='text-lg font-semibold'>Personal Information You Disclose to Us</h4>
+								<p className='px-4 py-4 md:px-16 text-left'>
+
 								<i className='italic'><b className='font-bold'>In Short: </b></i>
 								We collect personal information that you provide to us.
 								<br></br>
@@ -167,7 +168,10 @@ export default function PrivacyPolicy() {
 								and you must notify us of any changes to such personal information.
 								<br></br>
 								<br></br>
+							</p>
 								<h4 className='text-lg font-semibold'>Information automatically collected</h4>
+								<p className='px-4 py-4 md:px-16 text-left'>
+
 								<i className='italic'><b className='font-bold'>In Short: </b></i>
 								Some information — such as your Internet Protocol (IP) address and/or
 								browser and device characteristics — is collected automatically when you visit our Services.
@@ -182,6 +186,7 @@ export default function PrivacyPolicy() {
 								primarily needed to maintain the security and operation of our Services, and for our
 								internal analytics and reporting purposes.
 							</p>
+							{/* TODO Finish adding privacy policy (guh) */}
 						</li>
 					</ol>
 				</div>

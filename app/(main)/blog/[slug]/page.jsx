@@ -23,6 +23,10 @@ export default async function Post(req) {
 		<main className="bg-ctp-base min-h-screen max-w-screen">
 			<BaseCard>
 				<h1 className='text-ctp-text text-center text-3xl font-bold py-4 px-2'>{postContent.title}</h1>
+				<div className='flex justify-between px-4 py-2'>
+					<p className='text-ctp-text text-md font-bold'>{postContent.date}</p>
+					<p className='text-ctp-text text-md font-bold'>{postContent.author}</p>
+				</div>
 				<div dangerouslySetInnerHTML={postContent.renderedHtml} className='text-ctp-text' id='postContent' />
 				<CommentCard/>
 			</BaseCard>
