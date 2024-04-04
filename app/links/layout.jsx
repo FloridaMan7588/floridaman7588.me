@@ -3,6 +3,7 @@ import "@/app/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import ToTop from '@/app/components/nav/toTop.jsx';
+import Statistics from "@/app/components/statistics.jsx";
 
 
 const raleway = Raleway({ subsets: ["latin"], preload: true, variable: "--font-raleway" });
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className='scroll-smooth scrollbar-none'>
       <body className={`${raleway.variable} font-sans`}>
       <code hidden=""><a rel="me" href="https://blahaj.zone/@floridaman"></a></code>
+        <Statistics />
         {children}
         <ToTop />
       </body>

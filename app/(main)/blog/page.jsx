@@ -1,5 +1,5 @@
 import BaseCard from '@/app/components/cards/basecard';
-import { getPosts } from '@/app/lib/posts.js';
+import { getPosts, getMastodonPosts } from '@/app/lib/posts.js';
 
 export default async function Blog() {
 	const postList = await getPosts()

@@ -14,9 +14,50 @@
 	img {
 		@apply rounded-md
 	}
-	
 	code {
-		@apply bg-ctp-crust text-ctp-text px-2 py-1 text-wrap
+		@apply bg-ctp-crust py-1 text-ctp-lavender
+	}
+	pre {
+		@apply bg-ctp-crust text-ctp-text px-2 py-2 text-wrap rounded-md
+	}
+	.hljs-comment {
+		@apply text-ctp-maroon
+	}
+	.hljs-keyword {
+			@apply text-ctp-red
+	}
+	.hljs-meta {
+			@apply text-ctp-sky
+	}
+	.hljs-params {
+			@apply text-ctp-green
+	}
+	.hljs-params .hljs-string {
+		@apply text-ctp-green
+	}
+	.hljs-title {
+		@apply text-ctp-pink
+	}
+	.hljs-string {
+		@apply text-ctp-yellow
+	}
+	.hljs-literal {
+		@apply text-ctp-peach
+	}
+	.hljs-built_in {
+		@apply text-ctp-blue
+	}
+	.hljs-number {
+		@apply text-ctp-sapphire
+	}
+	.hljs-section {
+		@apply text-ctp-maroon
+	}
+	.hljs-attribute {
+		@apply text-ctp-sky
+	}
+	.hljs-variable {
+		@apply text-ctp-green
 	}
 	a {
 		@apply text-ctp-lavender

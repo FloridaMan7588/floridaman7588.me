@@ -1,5 +1,5 @@
 {
-	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:20-bookworm",
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -23,11 +23,14 @@
 				"davidanson.vscode-markdownlint",
 				"aaron-bond.better-comments",
 				"gruntfuggly.todo-tree",
-				"2gua.rainbow-brackets",
 				"shardulm94.trailing-spaces",
 				"leodevbro.blockman",
 				"deque-systems.vscode-axe-linter"
-			]
+			],
+			"settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": { "zsh": { "path": "/bin/zsh" } }
+            }
 		}
 	},
 	"features": {
@@ -37,7 +40,7 @@
 		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
 			"plugins": "ssh-agent npm",
 			"omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions",
-			"username": "vscode"
+			"username": "node"
 		},
 		"ghcr.io/devcontainers/features/github-cli:1": {
 			"installDirectlyFromGitHubRelease": true,
@@ -50,13 +53,13 @@
 			"version": "latest"
 		},
 		"ghcr.io/joshuanianji/devcontainer-features/github-cli-persistence:1": {},
-		"ghcr.io/devcontainers/features/node:1": {
-			"nodeGypDependencies": true,
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"moby": true,
+			"azureDnsAutoDetection": true,
+			"installDockerBuildx": true,
+			"installDockerComposeSwitch": true,
 			"version": "latest",
-			"nvmVersion": "latest"
-		},
-		"ghcr.io/devcontainers-contrib/features/act-asdf:2": {
-			"version": "latest"
+			"dockerDashComposeVersion": "latest"
 		}
 	}
 }
