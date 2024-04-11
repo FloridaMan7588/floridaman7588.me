@@ -10,6 +10,7 @@ import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkHtml from 'remark-html';
 import remarkGemoji from 'remark-gemoji';
+import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeStringify from 'rehype-stringify';
@@ -71,6 +72,7 @@ export async function getPostData(slug) {
   const processedContent = await unified()
     .use(remarkParse)
     .use(remarkGemoji)
+    .use(remarkGfm)
     .use(remarkHtml, { sanitize: false })
     .use(remarkRehype)
     .use (rehypeHighlight, {languages: {...all}})

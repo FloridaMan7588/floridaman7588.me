@@ -15,13 +15,13 @@
 		@apply rounded-md
 	}
 	code {
-		@apply bg-ctp-crust py-1 text-ctp-lavender
+		@apply bg-ctp-crust py-1 text-ctp-lavender text-wrap
 	}
 	pre {
 		@apply bg-ctp-crust text-ctp-text px-2 py-2 text-wrap rounded-md
 	}
 	.hljs-comment {
-		@apply text-ctp-maroon
+		@apply text-ctp-subtext0
 	}
 	.hljs-keyword {
 			@apply text-ctp-red
@@ -58,6 +58,15 @@
 	}
 	.hljs-variable {
 		@apply text-ctp-green
+	}
+	.hljs-tag {
+		@apply text-ctp-pink
+	}
+	.hljs-name {
+		@apply text-ctp-peach
+	}
+	.hljs-property {
+		@apply text-ctp-blue
 	}
 	a {
 		@apply text-ctp-lavender
