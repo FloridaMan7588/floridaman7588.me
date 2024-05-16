@@ -6,7 +6,7 @@ import Header from '@/app/components/nav/header.jsx';
 import Footer from '@/app/components/nav/footer.jsx';
 import ToTop from '@/app/components/nav/toTop.jsx';
 import Statistics from "@/app/components/statistics.jsx";
-
+import ONeko from "@/app/components/neko.jsx";
 
 const raleway = Raleway({ subsets: ["latin"], preload: true, variable: "--font-raleway" });
 
@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className='scroll-smooth scrollbar-none'>
       <body className={`${raleway.variable} font-sans bg-ctp-base`}>
         <Statistics />
+        <ONeko />
         <Header />
         {children}
         <ToTop />

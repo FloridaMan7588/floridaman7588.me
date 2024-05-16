@@ -34,32 +34,13 @@
 		}
 	},
 	"features": {
-		"ghcr.io/devcontainers-contrib/features/vercel-cli:1": {
-			"version": "latest"
-		},
-		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
-			"plugins": "ssh-agent npm",
-			"omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions",
-			"username": "node"
-		},
-		"ghcr.io/devcontainers/features/github-cli:1": {
-			"installDirectlyFromGitHubRelease": true,
-			"version": "latest"
-		},
-		"ghcr.io/devcontainers-contrib/features/vercel-release:1": {
-			"version": "latest"
-		},
-		"ghcr.io/devcontainers-contrib/features/vercel-serve:1": {
-			"version": "latest"
-		},
+		"ghcr.io/devcontainers-contrib/features/vercel-cli:1": {},
+		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers-contrib/features/vercel-release:1": {},
+		"ghcr.io/devcontainers-contrib/features/vercel-serve:1": {},
 		"ghcr.io/joshuanianji/devcontainer-features/github-cli-persistence:1": {},
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {
-			"moby": true,
-			"azureDnsAutoDetection": true,
-			"installDockerBuildx": true,
-			"installDockerComposeSwitch": true,
-			"version": "latest",
-			"dockerDashComposeVersion": "latest"
-		}
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+		"ghcr.io/shyim/devcontainers-features/bun:0": {}
 	}
 }
