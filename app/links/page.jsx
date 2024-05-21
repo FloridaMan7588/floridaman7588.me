@@ -34,8 +34,8 @@ export default function Page() {
         alt="A background for the page, both the bisexual and nonbinary flags intersecting"
       />
       <div className="flex flex-col justify-center items-center py-16">
-        <div className="flex relative min-h-48 min-w-48 py-4 md:min-h-64 md:min-w-64">
-          <Avatar className="rounded-[70px] max-h-48 max-w-48 relative" />
+        <div className="flex relative min-h-48 min-w-48 py-4 md:max-h-48 md:max-w-48 ">
+          <Avatar className="rounded-[70px] max-h-48 max-w-48"  />
         </div>
         <div className="flex flex-col py-8 text-center justify-center items-center">
           <h1 className="font-bold text-3xl py-4">FloridaMan7588</h1>

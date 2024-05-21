@@ -1,11 +1,11 @@
 import RSS from 'rss';
 import { appConfig } from '@/next.config.mjs'
-import { getSortedPostsData } from '@/app/lib/posts.js';
+import { getSortedBlogsData } from '@/app/lib/posts.js';
 import fs from 'fs';
 
 
 export async function generateRssFeed() {
-	const allPostsData = await getSortedPostsData();
+	const allPostsData = await getSortedBlogsData();
 
 	const feedOptions = {
 		title: 'Cayden Haun (FloridaMan) | Blog Posts',
@@ -26,6 +26,5 @@ export async function generateRssFeed() {
 			date: post.date,
 		});
 	})
-	
 	fs.writeFileSync(process.cwd() + '/public/feed.xml', feed.xml({ indent: true }));
 }

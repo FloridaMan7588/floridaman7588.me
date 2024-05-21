@@ -1,6 +1,7 @@
 ---
 title: "Privacy and Why I Dropped Disqus"
 date: 2024-04-11T12:35:00
+description: "Using free SaaS has never been easier, but when something is free, you are the product."
 author: "Cayden Haun"
 comments: true
 ---

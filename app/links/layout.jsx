@@ -23,10 +23,10 @@ export default function RootLayout({ children }) {
     <html lang="en" className='scroll-smooth scrollbar-none'>
       <body className={`${raleway.variable} font-sans`}>
       <code hidden=""><a rel="me" href="https://blahaj.zone/@floridaman"></a></code>
-        <ONeko />
         <Statistics />
         {children}
         <ToTop />
+        <ONeko />
       </body>
     </html>
   );

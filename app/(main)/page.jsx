@@ -8,10 +8,10 @@ import BaseCard from '@/app/components/cards/basecard.jsx';
 import AboutCard from '@/app/components/cards/aboutcard.jsx';
 import ProjectCard from '@/app/components/cards/projectcard.jsx';
 
-import { getPosts } from '@/app/lib/posts.js';
+import { getBlogPosts } from '@/app/lib/posts.js';
 
 export default async function Home() {
-  const postList = (await getPosts()).slice(0, 4)
+  const postList = (await getBlogPosts()).slice(0, 4)
 
   return (
     <main className="bg-ctp-base min-h-screen max-w-screen">

@@ -24,11 +24,11 @@ export default function RootLayout({ children }) {
     <html lang="en" className='scroll-smooth scrollbar-none'>
       <body className={`${raleway.variable} font-sans bg-ctp-base`}>
         <Statistics />
-        <ONeko />
         <Header />
         {children}
         <ToTop />
         <Footer />
+        <ONeko />
       </body>
     </html>
   );
