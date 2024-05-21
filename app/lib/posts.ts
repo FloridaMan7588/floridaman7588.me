@@ -16,8 +16,8 @@ import rehypeStringify from 'rehype-stringify';
 import { all } from 'lowlight';
 
 
-import PostCard from '@/app/components/cards/postcard.jsx';
-import { generateRssFeed } from '@/app/lib/rss.js';
+import PostCard from '@components/cards/postcard';
+import { generateRssFeed } from '@lib/rss';
 
 /* A lot of this comes from the Next.JS tutorial, and has been adapted to work with App Routing in Next14.
 See https://nextjs.org/learn/basics/data-fetching for more info*/
@@ -168,6 +168,5 @@ export async function getAllPosts() {
     allPostList.push(post)
   }
   allPostList.sort((a, b) => compareDesc(new Date(a.props.children.props.date), new Date(b.props.children.props.date)));
-  console.log(allPostList)
   return allPostList
 }

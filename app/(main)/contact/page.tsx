@@ -1,5 +1,5 @@
-import BaseCard from '@/app/components/cards/basecard.jsx';
-import ContactCard from '@/app/components/cards/contactcard.jsx';
+import BaseCard from '@components/cards/basecard';
+import ContactCard from '@components/cards/contactcard';
 
 export default async function Blog() {
 	return (

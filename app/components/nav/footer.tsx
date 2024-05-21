@@ -1,4 +1,4 @@
-import Socials from '@/app/components/socials.jsx';
+import Socials from '@/components/socials';
 import Link from 'next/link';
 
 export default function Footer() {

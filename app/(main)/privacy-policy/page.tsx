@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import BaseCard from "@/app/components/cards/basecard";
+import BaseCard from "@components/cards/basecard";
 
 export default function PrivacyPolicy() {
 	return (

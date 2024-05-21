@@ -1,14 +1,14 @@
 import Link from 'next/link'
-import Avatar from '@/app/components/avatar.jsx';
-import Socials from '@/app/components/socials.jsx';
-import waterfoxLogo from '@/public/images/projects/waterfox-logo.png';
-import mochadLogo from '@/public/images/projects/mochad-logo.png';
+import Avatar from '@components/avatar';
+import Socials from '@components/socials';
+import waterfoxLogo from '@images/projects/waterfox-logo.png';
+import mochadLogo from '@images/projects/mochad-logo.png';
 
-import BaseCard from '@/app/components/cards/basecard.jsx';
-import AboutCard from '@/app/components/cards/aboutcard.jsx';
-import ProjectCard from '@/app/components/cards/projectcard.jsx';
+import BaseCard from '@components/cards/basecard';
+import AboutCard from '@components/cards/aboutcard';
+import ProjectCard from '@components/cards/projectcard';
 
-import { getBlogPosts } from '@/app/lib/posts.js';
+import { getBlogPosts } from '@lib/posts';
 
 export default async function Home() {
   const postList = (await getBlogPosts()).slice(0, 4)

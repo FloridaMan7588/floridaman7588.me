@@ -1,5 +1,5 @@
-import BaseCard from '@/app/components/cards/basecard';
-import { getAllPosts } from '@/app/lib/posts.js';
+import BaseCard from '@components/cards/basecard';
+import { getAllPosts } from '@lib/posts';
 
 export default async function Blog() {
 	const postList = await getAllPosts()

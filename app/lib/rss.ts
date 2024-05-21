@@ -1,6 +1,6 @@
 import RSS from 'rss';
-import { appConfig } from '@/next.config.mjs'
-import { getSortedBlogsData } from '@/app/lib/posts.js';
+import { appConfig } from '~/next.config.mjs'
+import { getSortedBlogsData } from '@lib/posts';
 import fs from 'fs';
 
 

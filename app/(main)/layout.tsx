@@ -1,11 +1,12 @@
 import { Raleway } from "next/font/google";
-import "@/app/globals.css";
+import "@/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import ToTop from '@/app/components/nav/toTop.jsx';
-import Statistics from "@/app/components/statistics.jsx";
-import ONeko from "@/app/components/neko";
-
+import Header from '@/components/nav/header';
+import Footer from '@/components/nav/footer';
+import ToTop from '@/components/nav/toTop';
+import Statistics from "@/components/statistics";
+import ONeko from "@/components/neko";
 
 const raleway = Raleway({ subsets: ["latin"], preload: true, variable: "--font-raleway" });
 
@@ -21,11 +22,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className='scroll-smooth scrollbar-none'>
-      <body className={`${raleway.variable} font-sans`}>
-      <code hidden=""><a rel="me" href="https://blahaj.zone/@floridaman"></a></code>
+      <body className={`${raleway.variable} font-sans bg-ctp-base`}>
         <Statistics />
+        <Header />
         {children}
         <ToTop />
+        <Footer />
         <ONeko />
       </body>
     </html>

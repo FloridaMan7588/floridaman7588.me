@@ -1,7 +1,7 @@
-import BaseCard from "@/app/components/cards/basecard.jsx"
-import ProjectCard from "@/app/components/cards/projectcard.jsx"
-import waterfoxLogo from '@/public/images/projects/waterfox-logo.png';
-import mochadLogo from '@/public/images/projects/mochad-logo.png';
+import BaseCard from "@components/cards/basecard"
+import ProjectCard from "@components/cards/projectcard"
+import waterfoxLogo from '@images/projects/waterfox-logo.png';
+import mochadLogo from '@images/projects/mochad-logo.png';
 
 export default function Projects() {
 	return (

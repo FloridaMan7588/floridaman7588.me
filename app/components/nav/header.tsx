@@ -1,5 +1,5 @@
-import NavMenu from '@/app/components/nav/navMenu.jsx';
-import Avatar from '@/app/components/avatar.jsx';
+import NavMenu from '@/components/nav/navMenu';
+import Avatar from '@/components/avatar';
 
 import Link from 'next/link';
 
