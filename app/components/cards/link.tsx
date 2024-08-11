@@ -1,13 +1,16 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-export default function LinkCard({
-  icon,
-  name,
-  link,
-  description,
-  className,
-}) {
+interface Props {
+  icon: IconProp;
+  name: string;
+  link: URL;
+  description: string;
+  className: string | undefined;
+}
+
+export default function LinkCard({ icon, name, link, description, className }: Props) {
   return (
     <div className='py-12 w-60 h-4'>
       <Link

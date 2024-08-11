@@ -1,9 +1,19 @@
 import Link from 'next/link'
 
-export default function PostCard({title, date, formattedDate, description, author, slug, url}) {
-	let link
+interface Props {
+	title: string;
+	date?: Date;
+	formattedDate: string;
+	description: string;
+	author: string;
+	slug?: string;
+	url?: URL
+}
+
+export default function PostCard({title, formattedDate, description, author, slug, url}: Props) {
+	let link: string;
 	if (url) {
-		link = url
+		link = url.toString()
 	}
 	else if (slug) {
 		link = '/blog/' + slug

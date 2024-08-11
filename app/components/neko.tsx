@@ -3,7 +3,7 @@ import { Neko } from 'neko-ts';
 import { useEffect, useRef } from "react";
 
 export default function ONeko() {
-	const neko = useRef()
+	const neko = useRef<Neko | undefined>()
 	useEffect(() => {
 		if (!neko.current) {
 			neko.current = new Neko({

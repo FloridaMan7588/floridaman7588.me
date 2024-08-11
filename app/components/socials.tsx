@@ -3,7 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithubSquare, faLinkedin, faMastodon } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 
-export default function Socials({ type }) {
+interface Props {
+	type: 'footer' | 'hero';
+}
+
+export default function Socials({ type }: Props) {
 		if (type == 'footer') {
 		return (
 		<div className='grid-cols-3 md:py-4 flex justify-center'>
