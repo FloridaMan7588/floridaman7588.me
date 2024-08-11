@@ -4,9 +4,9 @@ import Socials from '@components/socials';
 import waterfoxLogo from '@images/projects/waterfox-logo.png';
 import mochadLogo from '@images/projects/mochad-logo.png';
 
-import BaseCard from '@components/cards/basecard';
-import AboutCard from '@components/cards/aboutcard';
-import ProjectCard from '@components/cards/projectcard';
+import BaseCard from '~/app/components/cards/base';
+import AboutCard from '~/app/components/cards/about';
+import ProjectCard from '~/app/components/cards/project';
 
 import { getBlogPosts } from '@lib/posts';
 

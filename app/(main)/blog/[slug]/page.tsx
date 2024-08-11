@@ -1,6 +1,6 @@
 import { getAllPostSlugs, getPostData } from '@lib/posts';
-import BaseCard from '@components/cards/basecard';
-import CommentCard from '@components/cards/commentcard';
+import BaseCard from '@components/cards/base';
+import CommentCard from '@components/cards/comment';
 import './post.css'
 
 export async function generatreStaticParams() {

@@ -1,4 +1,4 @@
-import BaseCard from '@components/cards/basecard';
+import BaseCard from '@components/cards/base';
 import { getAllPosts } from '@lib/posts';
 
 export default async function Blog() {
