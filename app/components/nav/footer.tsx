@@ -1,4 +1,4 @@
-import Socials from '@/components/socials';
+import Socials from '@components/socials';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -18,7 +18,7 @@ export default function Footer() {
 					</div>
 				</div>
 				<div className='px-4 md:py-4 py-2'>
-					<Socials type='footer'/>
+					<Socials type='footer' />
 				</div>
 				<div className='px-4 md:py-4 py-2'>
 					<div className='md:py-4'>

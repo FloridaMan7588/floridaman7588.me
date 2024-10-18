@@ -9,8 +9,8 @@ interface Props {
 	description: string;
 	image: string | StaticImport;
 	imageLink: string;
-	downloadUrl: URL;
-	sourceUrl: URL;
+	downloadUrl: string;
+	sourceUrl: string;
 }
 
 export default function ProjectCard({ title, description, image, imageLink, downloadUrl, sourceUrl }: Props) {

@@ -1,20 +1,20 @@
 import RSS from 'rss';
 import { appConfig } from '~/next.config.mjs'
-import { getSortedBlogsData } from '@lib/posts';
+import { getBlogsData } from '@lib/posts';
 import fs from 'fs';
 
 
 export async function generateRssFeed() {
-	const allPostsData = await getSortedBlogsData();
+	const allPostsData = await getBlogsData();
 
 	const feedOptions = {
-		title: 'Cayden Haun (FloridaMan) | Blog Posts',
-		description: 'Hello! I‘m FloridaMan7588, your average enby kittycoded programmer on the interwebs. I like to make things sometimes but I‘m not very good at it lol.',
+		title: 'Kay Haun (Pascalrr) | Blog Posts',
+		description: 'Hello! I‘m Pascalrr, your average enby kittycoded programmer on the interwebs. I like to make things sometimes but I‘m not very good at it lol.',
 		site_url: appConfig.appUrl,
 		feed_url: `${appConfig.appUrl}/feed.xml`,
 		image_url: `${appConfig.appUrl}/avatar.png`,
 		pubDate: new Date(),
-		copyright: `All Content © 2021-2024 by FloridaMan7588 is licensed under CC BY-SA 4.0`,
+		copyright: `All Content © 2021-2024 by Cayden (Kay) Haun is licensed under CC BY-SA 4.0`,
 	};
 	const feed = new RSS(feedOptions);
 

@@ -1,33 +1,35 @@
 import { Raleway } from "next/font/google";
-import "@/app/globals.css";
+import "@/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import ToTop from '@/app/components/nav/toTop.jsx';
-import Statistics from "@/app/components/statistics.js";
-import ONeko from "@/app/components/neko";
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+import ToTop from '@components/nav/toTop';
+import Statistics from "@components/statistics";
+import ONeko from "@components/neko";
 
 
 const raleway = Raleway({ subsets: ["latin"], preload: true, variable: "--font-raleway" });
 
 export const metadata = {
-  title: "FloridaMan7588",
-  description: "FloridaMan's Personal Website built with Next.js and React",
-  robots: {
-    index: true,
-    follow: true,
-  }
+	title: "Pascalrr",
+	description: "Pascalrr's Personal Website built with Next.js",
+	robots: {
+		index: true,
+		follow: true,
+	}
 };
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en" className='scroll-smooth scrollbar-none'>
-      <body className={`${raleway.variable} font-sans`}>
-      <code hidden=""><a rel="me" href="https://blahaj.zone/@floridaman"></a></code>
-        <Statistics />
-        {children}
-        <ToTop />
-        <ONeko />
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en" className='scroll-smooth scrollbar-none'>
+			<body className={`${raleway.variable} font-sans`}>
+				<code><a rel="me" href="https://blahaj.zone/@floridaman"></a></code>
+				<Statistics />
+				{children}
+				<ToTop />
+				<ONeko />
+			</body>
+		</html>
+	);
 }

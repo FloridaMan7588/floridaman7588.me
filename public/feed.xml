@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title><![CDATA[Cayden Haun (FloridaMan) | Blog Posts]]></title>
-        <description><![CDATA[Hello! I‘m FloridaMan7588, your average enby kittycoded programmer on the interwebs. I like to make things sometimes but I‘m not very good at it lol.]]></description>
+        <title><![CDATA[Kay Haun (Pascalrr) | Blog Posts]]></title>
+        <description><![CDATA[Hello! I‘m Pascalrr, your average enby kittycoded programmer on the interwebs. I like to make things sometimes but I‘m not very good at it lol.]]></description>
         <link>https://floridaman7588.me</link>
         <image>
             <url>https://floridaman7588.me/avatar.png</url>
-            <title>Cayden Haun (FloridaMan) | Blog Posts</title>
+            <title>Kay Haun (Pascalrr) | Blog Posts</title>
             <link>https://floridaman7588.me</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 21 May 2024 15:33:16 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 18 Oct 2024 21:28:26 GMT</lastBuildDate>
         <atom:link href="https://floridaman7588.me/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 21 May 2024 15:33:16 GMT</pubDate>
-        <copyright><![CDATA[All Content © 2021-2024 by FloridaMan7588 is licensed under CC BY-SA 4.0]]></copyright>
+        <pubDate>Fri, 18 Oct 2024 21:28:26 GMT</pubDate>
+        <copyright><![CDATA[All Content © 2021-2024 by Pascalrr is licensed under CC BY-SA 4.0]]></copyright>
         <item>
             <title><![CDATA[Privacy and Why I Dropped Disqus]]></title>
-            <description><![CDATA[Using free SaaS has never been easier, but when something is free, you are the product.]]></description>
             <link>https://floridaman7588.me/blog/why-i-dropped-disqus</link>
             <guid isPermaLink="true">https://floridaman7588.me/blog/why-i-dropped-disqus</guid>
             <pubDate>Thu, 11 Apr 2024 12:35:00 GMT</pubDate>

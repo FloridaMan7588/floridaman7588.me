@@ -1,10 +1,10 @@
-import { getAllPostSlugs, getPostData } from '@lib/posts';
+import { getPostSlugs, getPostData } from '@lib/posts';
 import BaseCard from '@components/cards/base';
 import CommentCard from '@components/cards/comment';
 import './post.css'
 
 export async function generatreStaticParams() {
-	const paths = getAllPostSlugs();
+	const paths = getPostSlugs();
 	return {
 		paths,
 		fallback: false,
@@ -12,7 +12,7 @@ export async function generatreStaticParams() {
 }
 
 export async function getPostContent(params) {
-	const postContent = await getPostData(params.slug);
+	const postContent: any = await getPostData(params.slug);
 	return postContent
 }
 
@@ -28,7 +28,7 @@ export default async function Post(req) {
 					<p className='text-ctp-text text-md font-bold'>{postContent.author}</p>
 				</div>
 				<div dangerouslySetInnerHTML={postContent.renderedHtml} className='text-ctp-text' id='postContent' />
-				<CommentCard/>
+				<CommentCard />
 			</BaseCard>
 		</main>
 	)
