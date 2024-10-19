@@ -167,7 +167,7 @@ export async function getBlogPosts(): Promise<ReactNode[]> {
 	for (const post of postData) {
 		const postElement = createElement(PostCard, { title: post.title, date: post.date, formattedDate: post.formattedDate, slug: post.slug, author: post.author, description: post.description });
 		postList.push(
-			createElement('div', { key: post.slug }, postElement)
+			createElement('div', { key: post.slug, className: 'py-4 px-2' }, postElement)
 		)
 	}
 	return postList;

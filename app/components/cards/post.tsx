@@ -20,7 +20,7 @@ export default function PostCard({ title, formattedDate, description, author, sl
 	}
 	return (
 		<Link href={link}>
-			<div className='bg-ctp-crust rounded-[45px] min-h-fit px-4 py-4 hoverPop105'>
+			<div className='bg-ctp-crust rounded-[45px] min-h-fit py-4 hoverPop105'>
 				<div className='px-8 py-4'>
 					<div className="flex justify-between">
 						<h1 className='text-ctp-text text-4xl font-bold'>{title}</h1>

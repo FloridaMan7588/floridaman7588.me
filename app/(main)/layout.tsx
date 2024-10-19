@@ -13,7 +13,7 @@ import ONeko from "@components/neko";
 const raleway = Raleway({ subsets: ["latin"], preload: true, variable: "--font-raleway" });
 
 export const metadata = {
-	title: "Pascalrr",
+	title: "Pascalrr's Site",
 	description: "Pascalrr's Personal Website built with Next.js",
 	robots: {
 		index: true,
