@@ -8,6 +8,7 @@ import matter from 'gray-matter';
 import { format } from 'date-fns';
 
 import { unified } from 'unified';
+import { remark } from 'remark';
 import remarkParse from 'remark-parse';
 import remarkHtml from 'remark-html';
 import remarkGemoji from 'remark-gemoji';
@@ -80,12 +81,7 @@ interface frontMatter {
 	tags: string[];
 	author: string;
 	comments: boolean
-}
-
-export interface staticParams {
-	params: {
-		slug: string;
-	}
+	description?: string;
 }
 
 export async function getBlogsData(): Promise<blogPost[]> {
@@ -102,7 +98,7 @@ export async function getBlogsData(): Promise<blogPost[]> {
 		};
 	});
 	const postData = allPostsData.map((post) => {
-		return new blogPost(post.title, post.slug, post.date, post.author);
+		return new blogPost(post.title, post.slug, post.date, post.author, post.description);
 	});
 	return postData.sort((a, b) => {
 		return b.date.getTime() - a.date.getTime();
@@ -123,14 +119,10 @@ export async function getMastoData() {
 	});
 }
 
-export async function getPostSlugs(): Promise<staticParams[]> {
+export async function getPostSlugs(): Promise<string[]> {
 	const filenames = fs.readdirSync(path.join(process.cwd(), 'content/posts/'));
 	return filenames.map((fileName) => {
-		return {
-			params: {
-				slug: fileName.replace(/\.md$/, '')
-			}
-		}
+		return fileName.replace(/\.md$/, '')
 	})
 }
 
@@ -154,7 +146,7 @@ export async function getPostData(slug: string) {
 	return {
 		slug,
 		renderedHtml,
-		...matterResult.data,
+		...matterResult.data as frontMatter,
 		date,
 	};
 }
@@ -185,7 +177,7 @@ export async function getMastoPosts(): Promise<ReactNode[]> {
 		}
 		const postElement = createElement(PostCard, {title: post.title, date: post.date, formattedDate: post.formattedDate, url: post.slug, author: 'Pascalr (Kay)', description: content});
 		postList.push(
-			createElement('div', { key: post.slug }, postElement)
+			createElement('div', { key: post.slug, className: 'py-4 px-2' }, postElement)
 		)
 	}
 	return postList

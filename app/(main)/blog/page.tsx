@@ -1,6 +1,7 @@
 import BaseCard from '@components/cards/base';
 import { getAllPosts } from '@lib/posts';
 
+
 export default async function Blog() {
 	const postList = await getAllPosts()
 
