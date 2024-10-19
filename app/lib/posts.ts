@@ -89,7 +89,7 @@ export interface staticParams {
 }
 
 export async function getBlogsData(): Promise<blogPost[]> {
-	const postsDirectory = path.join('/workspaces/floridaman7588.me', 'content/posts/');
+	const postsDirectory = path.join(process.cwd(), 'content/posts/');
 	const fileNames = fs.readdirSync(postsDirectory);
 	const allPostsData = fileNames.map((fileName) => {
 		const slug = fileName.replace(/\.md$/, '');
@@ -135,7 +135,7 @@ export async function getPostSlugs(): Promise<staticParams[]> {
 }
 
 export async function getPostData(slug: string) {
-	const fullPath = path.join('/workspaces/floridaman7588.me/content/posts/', `${slug}.md`);
+	const fullPath = path.join(process.cwd(), 'content/posts/', `${slug}.md`);
 	const fileContents = fs.readFileSync(fullPath, 'utf8');
 	const matterResult = matter(fileContents);
 	const processedContent = await unified()

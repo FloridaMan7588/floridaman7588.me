@@ -35,7 +35,7 @@ export default function AboutCard({ title, content, contacts }: Props) {
 				</div>
 				<div className="py-8">
 					<div className="text-ctp-text px-8 md:px-16 py-4 rounded-[45px] justify-center min-w-fit bg-crust">
-						<h2 className="text-3xl font-bold py-4"></h2>
+						<h2 className="text-3xl font-bold py-4">Preferred Contact Methods</h2>
 						<ul className="md:text-xl text-lg md:w-64">{contactList}</ul>
 					</div>
 				</div>
