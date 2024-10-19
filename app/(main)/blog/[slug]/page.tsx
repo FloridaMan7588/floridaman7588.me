@@ -1,24 +1,27 @@
-import { getAllPostSlugs, getPostData } from '@/app/lib/posts';
-import BaseCard from '@/app/components/cards/basecard.jsx';
-import CommentCard from '@/app/components/cards/commentcard.jsx';
+import { getPostSlugs, getPostData } from '@lib/posts';
+import BaseCard from '@components/cards/base';
+import CommentCard from '@components/cards/comment';
 import './post.css'
 
-export async function generatreStaticParams() {
-	const paths = getAllPostSlugs();
-	return {
-		paths,
-		fallback: false,
-	};
+interface Content {
+	title?: string;
+	date: string;
+	author?: string;
+	slug: string;
+	renderedHtml: {
+		__html: string;
+	}
 }
-
-export async function getPostContent(params) {
-	const postContent = await getPostData(params.slug);
-	return postContent
-}
-
 
 export default async function Post(req) {
-	const postContent = await getPostContent(req.params)
+	const validSlugs = await getPostSlugs()
+	let pageSlug = '404'
+	for (const slug of validSlugs) {
+		if (req.params.slug == slug) {
+			pageSlug = slug
+		}
+	}
+	const postContent: Content = await getPostData(pageSlug)
 	return (
 		<main className="bg-ctp-base min-h-screen max-w-screen">
 			<BaseCard>
@@ -28,7 +31,7 @@ export default async function Post(req) {
 					<p className='text-ctp-text text-md font-bold'>{postContent.author}</p>
 				</div>
 				<div dangerouslySetInnerHTML={postContent.renderedHtml} className='text-ctp-text' id='postContent' />
-				<CommentCard/>
+				<CommentCard />
 			</BaseCard>
 		</main>
 	)

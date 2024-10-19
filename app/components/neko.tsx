@@ -1,9 +1,9 @@
 'use client'
 import { Neko } from 'neko-ts';
-import { useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 
-export default function ONeko() {
-	const neko = useRef()
+export default function ONeko(): ReactNode | null {
+	const neko = useRef<Neko | undefined>();
 	useEffect(() => {
 		if (!neko.current) {
 			neko.current = new Neko({
@@ -15,4 +15,6 @@ export default function ONeko() {
 			});
 		}
 	}, [neko]);
+
+	return null;
 }

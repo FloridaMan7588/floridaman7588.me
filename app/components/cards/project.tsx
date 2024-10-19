@@ -2,8 +2,18 @@ import Image from 'next/image';
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGitAlt } from '@fortawesome/free-brands-svg-icons';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
-export default function ProjectCard({ title, description, image, imageLink, downloadUrl, sourceUrl }) {
+interface Props {
+	title: string;
+	description: string;
+	image: string | StaticImport;
+	imageLink: string;
+	downloadUrl: string;
+	sourceUrl: string;
+}
+
+export default function ProjectCard({ title, description, image, imageLink, downloadUrl, sourceUrl }: Props) {
 	return (
 		<div className='py-4 px-2 md:px-16'>
 			<div className='bg-ctp-crust rounded-[45px] px-4 py-4 text-ctp-text grid-cols-1 grid place-items-center'>

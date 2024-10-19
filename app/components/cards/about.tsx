@@ -1,5 +1,12 @@
-export default function AboutCard({ about, skills }) {
-	const skillList = []
+import { ReactElement } from 'react'
+
+interface Props {
+	about: string;
+	skills: string[];
+}
+
+export default function AboutCard({ about, skills }: Props) {
+	const skillList: ReactElement[] = []
 	for (const skill of skills) {
 		const listId = skills.indexOf(skill)
 		skillList.push(<li className='py-2 md:py-4' key={listId}>{'• ' + skill}</li>)
