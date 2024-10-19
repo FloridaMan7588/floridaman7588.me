@@ -3,15 +3,16 @@ import BaseCard from '@components/cards/base';
 import CommentCard from '@components/cards/comment';
 import './post.css'
 
-export async function generatreStaticParams() {
-	const paths = getPostSlugs();
+
+export async function generateStaticParams(): Promise<any> {
+	const paths = await getPostSlugs();
 	return {
 		paths,
 		fallback: false,
 	};
 }
 
-export async function getPostContent(params) {
+async function getPostContent(params) {
 	const postContent: any = await getPostData(params.slug);
 	return postContent
 }

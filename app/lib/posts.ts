@@ -82,7 +82,7 @@ interface frontMatter {
 	comments: boolean
 }
 
-interface staticParams {
+export interface staticParams {
 	params: {
 		slug: string;
 	}
