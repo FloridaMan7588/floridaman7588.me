@@ -12,7 +12,7 @@ export default function Socials({ type }: Props) {
 		return (
 			<div className='grid-cols-3 md:py-4 flex justify-center'>
 				<Link href='https://fm7588.me/redirect/github' aria-label='GitHub profile link'><FontAwesomeIcon icon={faGithubSquare} className='px-4 min-w-8 min-h-8 hoverPop110' /></Link>
-				<Link href='https://fm7588.me/redirect/LinkedIn' aria-label='LinkedIn profile link'><FontAwesomeIcon icon={faLinkedin} className='px-4 min-w-8 min-h-8 hoverPop110' /></Link>
+				<Link href='https://fm7588.me/redirect/linkedIn' aria-label='LinkedIn profile link'><FontAwesomeIcon icon={faLinkedin} className='px-4 min-w-8 min-h-8 hoverPop110' /></Link>
 				<Link href='https://fm7588.me/redirect/mastodon' aria-label='Mastodon profile link'><FontAwesomeIcon icon={faMastodon} className='px-4 min-w-8 min-h-8 hoverPop110' /></Link>
 				<Link href='https://fm7588.me/redirect/links' aria-label='Littlelink page link'><FontAwesomeIcon icon={faLink} className='px-4 min-w-8 min-h-8 hoverPop110' /></Link>
 			</div>
@@ -22,7 +22,7 @@ export default function Socials({ type }: Props) {
 		return (
 			<div className='grid-cols-4 py-8 flex justify-center'>
 				<Link href='https://fm7588.me/redirect/github' aria-label='GitHub profile link'><FontAwesomeIcon icon={faGithubSquare} className='px-4 min-w-12 min-h-12 hoverPop110' /></Link>
-				<Link href='https://fm7588.me/redirect/LinkedIn' aria-label='LinkedIn profile link'><FontAwesomeIcon icon={faLinkedin} className='px-4 min-w-12 min-h-12 hoverPop110' /></Link>
+				<Link href='https://fm7588.me/redirect/linkedIn' aria-label='LinkedIn profile link'><FontAwesomeIcon icon={faLinkedin} className='px-4 min-w-12 min-h-12 hoverPop110' /></Link>
 				<Link href='https://fm7588.me/redirect/mastodon' aria-label='Mastodon profile link'><FontAwesomeIcon icon={faMastodon} className='px-4 min-w-12 min-h-12 hoverPop110' /></Link>
 				<Link href='https://fm7588.me/redirect/links' aria-label='Littlelink page link'><FontAwesomeIcon icon={faLink} className='px-4 min-w-12 min-h-12 hoverPop110' /></Link>
 			</div>
