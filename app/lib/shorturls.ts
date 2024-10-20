@@ -1,8 +1,8 @@
 interface Config {
 	shorturls: {
-			redirect: string;
-			target: string;
-		}[];
+		redirect: string;
+		target: string;
+	}[];
 }
 
 const config: Config = {
@@ -67,8 +67,6 @@ export function checkRedirect(shorturl: string): string {
 	for (const shortnerObject of config.shorturls) {
 		if (shorturl == shortnerObject.redirect) {
 			destination = shortnerObject.target
-		} else {
-			destination = '/404'
 		}
 	}
 	return destination
