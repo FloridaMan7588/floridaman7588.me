@@ -54,24 +54,30 @@ class genericPost {
 class blogPost extends genericPost {
 	author: string;
 	description?: string;
+	card: ReactNode;
 	constructor(title: string, slug: string, date: Date, author: string, description?: string) {
 		super(title, date, slug);
 		this.author = author;
 		if (description) {
 			this.description = description;
 		}
+		this.card = createElement(PostCard, { title: this.title, date: this.date, formattedDate: this.formattedDate, slug: this.slug, author: this.author, description: this.description });
 	}
 }
 
 class mastoPost extends genericPost {
 	content: string;
 	summary?: string;
+	card: ReactNode;
 	constructor(title: string, slug: string, date_modified: Date, content: string, summary?: string) {
 		super(title, date_modified, slug);
 		this.content = content;
 		if (summary) {
 			this.summary = summary;
+		} else {
+			this.summary = content?.substring(0, 128);
 		}
+		this.card = createElement(PostCard, { title: this.title, date: this.date, formattedDate: this.formattedDate, url: new URL(this.slug), author: 'Pascalr (Kay)', description: this.summary });
 	}
 }
 
@@ -108,7 +114,7 @@ export async function getBlogsData(): Promise<blogPost[]> {
 
 export async function getMastoData() {
 	const tootData = []
-	await fetch('https://blahaj.zone/@floridaman.json')
+	await fetch('https://blahaj.zone/@floridaman.json', { next: { revalidate: 0 } })
 		.then(res => res.json())
 		.then(data => {
 			for (const item of data.items) {
@@ -159,9 +165,8 @@ export async function getBlogPosts(): Promise<ReactNode[]> {
 
 	const postList: ReactNode[] = [];
 	for (const post of postData) {
-		const postElement = createElement(PostCard, { title: post.title, date: post.date, formattedDate: post.formattedDate, slug: post.slug, author: post.author, description: post.description });
 		postList.push(
-			createElement('div', { key: post.slug, className: 'py-4 px-2' }, postElement)
+			createElement('div', { key: post.slug, className: 'py-4 px-2' }, post.card)
 		)
 	}
 	return postList;
@@ -179,7 +184,7 @@ export async function getMastoPosts(): Promise<ReactNode[]> {
 		}
 		const postElement = createElement(PostCard, { title: post.title, date: post.date, formattedDate: post.formattedDate, url: post.slug, author: 'Pascalr (Kay)', description: content });
 		postList.push(
-			createElement('div', { key: post.slug, className: 'py-4 px-2' }, postElement)
+			createElement('div', { key: post.slug, className: 'py-4 px-2' }, post.card)
 		)
 	}
 	return postList

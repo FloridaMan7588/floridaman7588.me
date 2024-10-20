@@ -20,10 +20,9 @@ export default function LinkCard({ icon, name, link, description, className }: P
 				aria-label={description}
 				href={link}
 			>
-				<div className={className + " rounded-[45px] hoverPop110 w-content flex justify-center align-center text-center"}>
-
-					<FontAwesomeIcon icon={icon} className="min-h-8 min-w-8 px-4 py-2" />
-					<h2 className="text-lg px-4 py-3 font-bold">{name}</h2>
+				<div className={className + " rounded-[45px] hoverPop110 w-content grid grid-cols-4 justify-center align-center text-center"}>
+					<FontAwesomeIcon icon={icon} className="min-h-8 min-w-8 px-4 py-2 place-self-center" />
+					<h2 className="text-lg px-4 py-3 font-bold col-span-3">{name}</h2>
 				</div>
 
 			</Link>
