@@ -37,6 +37,7 @@
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.0",
     "rss": "^1.2.2",
+    "sanitize-html": "^2.13.1",
     "sharp": "^0.33.2",
     "unified": "^11.0.4"
   },

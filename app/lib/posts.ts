@@ -1,5 +1,6 @@
 //rewrite/restructure of posts functionality in ts
 import { ReactNode, createElement } from 'react';
+import sanitizeHtml from 'sanitize-html'
 
 import fs from 'fs';
 import path from 'path';
@@ -111,7 +112,8 @@ export async function getMastoData() {
 		.then(res => res.json())
 		.then(data => {
 			for (const item of data.items) {
-				tootData.push(new mastoPost('New Microblog Status', item.url, new Date(item.date_modified), item.content_html, item.summary));
+				const content = sanitizeHtml(item.content_html, { allowedTags: [], })
+				tootData.push(new mastoPost('New Microblog Status', item.url, new Date(item.date_modified), content, item.summary));
 			}
 		});
 	return tootData.sort((a, b) => {
@@ -136,7 +138,7 @@ export async function getPostData(slug: string) {
 		.use(remarkGfm)
 		.use(remarkHtml, { sanitize: false })
 		.use(remarkRehype)
-		.use(rehypeHighlight, { languages: { ...all }})
+		.use(rehypeHighlight, { languages: { ...all } })
 		.use(rehypeStringify)
 		.process(matterResult.content)
 
@@ -175,7 +177,7 @@ export async function getMastoPosts(): Promise<ReactNode[]> {
 		} else {
 			content = post.content?.substring(0, 128);
 		}
-		const postElement = createElement(PostCard, {title: post.title, date: post.date, formattedDate: post.formattedDate, url: post.slug, author: 'Pascalr (Kay)', description: content});
+		const postElement = createElement(PostCard, { title: post.title, date: post.date, formattedDate: post.formattedDate, url: post.slug, author: 'Pascalr (Kay)', description: content });
 		postList.push(
 			createElement('div', { key: post.slug, className: 'py-4 px-2' }, postElement)
 		)
@@ -187,10 +189,10 @@ export async function getAllPosts() {
 	const allPostList: ReactNode[] = [];
 
 	await getBlogPosts().then(posts => {
-			for (const post of posts) {
-				allPostList.push(post);
-			}
-		})
+		for (const post of posts) {
+			allPostList.push(post);
+		}
+	})
 	await getMastoPosts().then(posts => {
 		for (const post of posts) {
 			allPostList.push(post);
@@ -203,3 +205,6 @@ export async function getAllPosts() {
 		return dateB.getTime() - dateA.getTime();
 	});
 }
+
+
+getMastoData().then(data => console.log(data))
