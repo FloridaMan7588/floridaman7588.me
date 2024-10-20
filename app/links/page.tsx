@@ -56,56 +56,56 @@ export default function Page() {
 					<LinkCard
 						icon={faGlobeIcon}
 						name="Website"
-						link="https://fm7588.me/website"
+						link="https://fm7588.me/redirect/website"
 						description="Link to Personal portfolio/website"
 						className="bg-blue-700"
 					/>
 					<LinkCard
 						icon={faGithubIcon}
 						name="GitHub"
-						link="https://fm7588.me/github"
+						link="https://fm7588.me/redirect/github"
 						description="Link to Personal GitHub Page"
 						className="bg-black"
 					/>
 					<LinkCard
 						icon={faLinkedinIcon}
 						name="LinkedIn"
-						link="https://fm7588.me/linkedin"
+						link="https://fm7588.me/redirect/linkedin"
 						description="Link to Personal LinkedIn page"
 						className="bg-indigo-700"
 					/>
 					<LinkCard
 						icon={faMastodonIcon}
 						name="Mastodon"
-						link="https://fm7588.me/mastodon"
+						link="https://fm7588.me/redirect/mastodon"
 						description="Link to Personal Microblog/ Mastodon page"
 						className="bg-violet-900"
 					/>
 					<LinkCard
 						icon={faYoutubeIcon}
 						name="YouTube"
-						link="https://fm7588.me/youtube"
+						link="https://fm7588.me/redirect/youtube"
 						description="Link to Programming YouTube Channel"
 						className="bg-red-600"
 					/>
 					<LinkCard
 						icon={faDiscordIcon}
 						name="Discord Server"
-						link="https://fm7588.me/discord"
+						link="https://fm7588.me/redirect/discord"
 						description="Link to Project discord server"
 						className="bg-indigo-600"
 					/>
 					<LinkCard
 						icon={faDollarIcon}
 						name="Ko-Fi"
-						link="https://fm7588.me/kofi"
+						link="https://fm7588.me/redirect/kofi"
 						description="Link to Ko-Fi page"
 						className="bg-sky-600"
 					/>
 					<LinkCard
 						icon={faDollarIcon}
 						name="Buy Me a Coffee"
-						link="https://fm7588.me/coffee"
+						link="https://fm7588.me/redirect/coffee"
 						description="Link to Buy me A Coffee"
 						className="bg-amber-400"
 					/>
@@ -113,14 +113,14 @@ export default function Page() {
 					<LinkCard
 						icon={faGithubIcon}
 						name="Waterfox Flatpak GitHub"
-						link="https://fm7588.me/waterfox-github"
+						link="https://fm7588.me/redirect/waterfox-github"
 						description="Link to Waterfox Flatpak GitHub"
 						className="bg-black"
 					/>
 					<LinkCard
 						icon={faGithubIcon}
 						name="Mochad Addon GitHub"
-						link="https://fm7588.me/mochad-github"
+						link="https://fm7588.me/redirect/mochad-github"
 						description="Link to Mochad Addon GitHub"
 						className="bg-black"
 					/>
