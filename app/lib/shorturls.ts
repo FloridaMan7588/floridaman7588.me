@@ -1,16 +1,18 @@
-import { readFileSync } from 'fs'
-import { parse } from 'yaml'
-
 interface Config {
-	shorturls: [
-		{
+	shorturls: {
 			redirect: string;
 			target: string;
+		}[];
+}
+
+const config: Config = {
+	shorturls: [
+		{
+			redirect: "github",
+			target: "https://github.com/floridaman7588"
 		}
 	]
 }
-
-const config: Config = parse(readFileSync('/workspaces/floridaman7588.me/urls.yaml', 'utf8'))
 
 export function checkRedirect(shorturl: string): string {
 	let destination
