@@ -53,15 +53,15 @@ export default async function Home() {
 					<ProjectCard title='Waterfox Flatpak'
 						description='Waterfox, a browser built for the modern web, now available as a Flatpak.'
 						image={waterfoxLogo}
-						imageLink='https://fm7588.me/waterfox-flatpak'
-						downloadUrl='https://fm7588.me/waterfox-flathub'
-						sourceUrl='https://fm7588.me/waterfox-github' />
+						imageLink='https://fm7588.me/redirect/waterfox-github'
+						downloadUrl='https://fm7588.me/redirect/waterfox-flathub'
+						sourceUrl='https://fm7588.me/redirect/waterfox-github' />
 					<ProjectCard title='mochad-ha-addon'
 						description='A simple Home Assistant add-on for connecting X-10 ActiveHome devices to your smart home.'
 						image={mochadLogo}
-						imageLink='https://fm7588.me/mochad-ha-addon'
-						downloadUrl='https://fm7588.me/mochad-releases'
-						sourceUrl='https://fm7588.me/mochad-github' />
+						imageLink='https://fm7588.me/redirect/mochad-github'
+						downloadUrl='https://fm7588.me/redirect/mochad-releases'
+						sourceUrl='https://fm7588.me/redirect/mochad-github' />
 				</div>
 				<div className='py-4 md:px-16 px-4'>
 					<div className='text-ctp-text bg-ctp-crust rounded-[45px] px-4 py-4'>
