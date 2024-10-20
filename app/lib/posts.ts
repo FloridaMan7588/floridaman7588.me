@@ -205,6 +205,3 @@ export async function getAllPosts() {
 		return dateB.getTime() - dateA.getTime();
 	});
 }
-
-
-getMastoData().then(data => console.log(data))
