@@ -39,7 +39,8 @@
     "rss": "^1.2.2",
     "sanitize-html": "^2.13.1",
     "sharp": "^0.33.2",
-    "unified": "^11.0.4"
+    "unified": "^11.0.4",
+    "yaml": "^2.6.0"
   },
   "devDependencies": {
     "@catppuccin/tailwindcss": "^0.1.6",

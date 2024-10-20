@@ -1,0 +1,5 @@
+shorturls:
+  - redirect: 'github'
+    target: 'https://github.com/FloridaMan7588'
+  - redirect: 'youtube'
+    target: 'https://youtube.com/@FloridaMan7588'
